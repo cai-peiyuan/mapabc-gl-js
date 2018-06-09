@@ -59,7 +59,7 @@ var geojson = {
     ]
 };
 
-var map = new mapboxgl.Map({
+var map = new mapabcgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
     center: [-65.017, -16.457],
@@ -80,7 +80,7 @@ geojson.features.forEach(function(marker) {
     });
 
     // add marker to map
-    new mapboxgl.Marker(el)
+    new mapabcgl.Marker(el)
         .setLngLat(marker.geometry.coordinates)
         .addTo(map);
 });

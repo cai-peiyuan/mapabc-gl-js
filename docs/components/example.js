@@ -53,7 +53,7 @@ export default function (html) {
 </head>
 <body>
 
-${html.replace("<script>", `<script>\nmapboxgl.accessToken = '${this.state.token}';`)}
+${html.replace("<script>", `<script>\nmapabcgl.accessToken = '${this.state.token}';`)}
 </body>
 </html>`;
         }
@@ -71,7 +71,7 @@ ${html.replace("<script>", `<script>\nmapboxgl.accessToken = '${this.state.token
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; }
     </style>
-    <script>mapboxgl.accessToken = '${MapboxPageShell.getMapboxAccessToken()}'</script>
+    <script>mapabcgl.accessToken = '${MapboxPageShell.getMapboxAccessToken()}'</script>
 </head>
 <body>
 ${html}

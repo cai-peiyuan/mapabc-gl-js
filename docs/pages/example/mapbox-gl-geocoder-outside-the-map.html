@@ -9,13 +9,13 @@
         margin-left:-25%;
         top:20px;
     }
-    .mapboxgl-ctrl-geocoder { min-width:100%; }
+    .mapabcgl-ctrl-geocoder { min-width:100%; }
 </style>
 <div id='map'></div>
 <div id='geocoder' class='geocoder'></div>
 
 <script>
-var map = new mapboxgl.Map({
+var map = new mapabcgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
     center: [-79.4512, 43.6568],
@@ -23,7 +23,7 @@ var map = new mapboxgl.Map({
 });
 
 var geocoder = new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken
+    accessToken: mapabcgl.accessToken
 });
 
 document.getElementById('geocoder').appendChild(geocoder.onAdd(map));

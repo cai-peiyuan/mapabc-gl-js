@@ -199,7 +199,7 @@ const defaultOptions = {
  * @param {boolean} [options.collectResourceTiming=false] If `true`, Resource Timing API information will be collected for requests made by GeoJSON and Vector Tile web workers (this information is normally inaccessible from the main Javascript thread). Information will be returned in a `resourceTiming` property of relevant `data` events.
  * @param {number} [options.fadeDuration=300] Controls the duration of the fade-in/fade-out animation for label collisions, in milliseconds. This setting affects all symbol layers. This setting does not affect the duration of runtime styling transitions or raster tile cross-fading.
  * @example
- * var map = new mapboxgl.Map({
+ * var map = new mapabcgl.Map({
  *   container: 'map',
  *   center: [-122.420679, 37.772537],
  *   zoom: 13,
@@ -1483,18 +1483,18 @@ class Map extends Camera {
 
     _setupContainer() {
         const container = this._container;
-        container.classList.add('mapboxgl-map');
+        container.classList.add('mapabcgl-map');
 
-        const missingCSSCanary = this._missingCSSCanary = DOM.create('div', 'mapboxgl-canary', container);
+        const missingCSSCanary = this._missingCSSCanary = DOM.create('div', 'mapabcgl-canary', container);
         missingCSSCanary.style.visibility = 'hidden';
         this._detectMissingCSS();
 
-        const canvasContainer = this._canvasContainer = DOM.create('div', 'mapboxgl-canvas-container', container);
+        const canvasContainer = this._canvasContainer = DOM.create('div', 'mapabcgl-canvas-container', container);
         if (this._interactive) {
-            canvasContainer.classList.add('mapboxgl-interactive');
+            canvasContainer.classList.add('mapabcgl-interactive');
         }
 
-        this._canvas = DOM.create('canvas', 'mapboxgl-canvas', canvasContainer);
+        this._canvas = DOM.create('canvas', 'mapabcgl-canvas', canvasContainer);
         this._canvas.style.position = 'absolute';
         this._canvas.addEventListener('webglcontextlost', this._contextLost, false);
         this._canvas.addEventListener('webglcontextrestored', this._contextRestored, false);
@@ -1504,10 +1504,10 @@ class Map extends Camera {
         const dimensions = this._containerDimensions();
         this._resizeCanvas(dimensions[0], dimensions[1]);
 
-        const controlContainer = this._controlContainer = DOM.create('div', 'mapboxgl-control-container', container);
+        const controlContainer = this._controlContainer = DOM.create('div', 'mapabcgl-control-container', container);
         const positions = this._controlPositions = {};
         ['top-left', 'top-right', 'bottom-left', 'bottom-right'].forEach((positionName) => {
-            positions[positionName] = DOM.create('div', `mapboxgl-ctrl-${positionName}`, controlContainer);
+            positions[positionName] = DOM.create('div', `mapabcgl-ctrl-${positionName}`, controlContainer);
         });
     }
 
@@ -1712,7 +1712,7 @@ class Map extends Camera {
         removeNode(this._canvasContainer);
         removeNode(this._controlContainer);
         removeNode(this._missingCSSCanary);
-        this._container.classList.remove('mapboxgl-map');
+        this._container.classList.remove('mapabcgl-map');
         this.fire(new Event('remove'));
     }
 
@@ -1836,7 +1836,7 @@ function removeNode(node) {
  *
  * Controls must implement `onAdd` and `onRemove`, and must own an
  * element, which is often a `div` element. To use Mapbox GL JS's
- * default control styling, add the `mapboxgl-ctrl` class to your control's
+ * default control styling, add the `mapabcgl-ctrl` class to your control's
  * node.
  *
  * @interface IControl
@@ -1846,7 +1846,7 @@ function removeNode(node) {
  *     onAdd(map) {
  *         this._map = map;
  *         this._container = document.createElement('div');
- *         this._container.className = 'mapboxgl-ctrl';
+ *         this._container.className = 'mapabcgl-ctrl';
  *         this._container.textContent = 'Hello, world';
  *         return this._container;
  *     }
@@ -1863,7 +1863,7 @@ function removeNode(node) {
  * HelloWorldControl.prototype.onAdd = function(map) {
  *     this._map = map;
  *     this._container = document.createElement('div');
- *     this._container.className = 'mapboxgl-ctrl';
+ *     this._container.className = 'mapabcgl-ctrl';
  *     this._container.textContent = 'Hello, world';
  *     return this._container;
  * };

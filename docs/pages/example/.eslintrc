@@ -8,7 +8,7 @@
       },
       "plugins": ["html"],
       "globals": {
-        "mapboxgl": true,
+        "mapabcgl": true,
         "MapboxGeocoder": true,
         "MapboxDirections": true,
         "turf": true,

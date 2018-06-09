@@ -22,8 +22,8 @@ class QuickstartCDN extends React.Component {
                     {highlightMarkup(`
                         <div id='map' style='width: 400px; height: 300px;'></div>
                         <script>
-                        mapboxgl.accessToken = '${this.props.token}';
-                        var map = new mapboxgl.Map({
+                        mapabcgl.accessToken = '${this.props.token}';
+                        var map = new mapabcgl.Map({
                             container: 'map',
                             style: 'mapbox://styles/mapbox/streets-v9'
                         });
@@ -50,11 +50,11 @@ class QuickstartBundler extends React.Component {
                 <p>Include the following code in the <code>&lt;body&gt;</code> of your HTML file.</p>
                 <Copyable>
                     {highlightJavascript(`
-                        import mapboxgl from 'mapbox-gl';
-                        // or "const mapboxgl = require('mapbox-gl');"
+                        import mapabcgl from 'mapbox-gl';
+                        // or "const mapabcgl = require('mapbox-gl');"
 
-                        mapboxgl.accessToken = '${this.props.token}';
-                        const map = new mapboxgl.Map({
+                        mapabcgl.accessToken = '${this.props.token}';
+                        const map = new mapabcgl.Map({
                             container: '<your HTML element id>',
                             style: 'mapbox://styles/mapbox/streets-v9'
                         });

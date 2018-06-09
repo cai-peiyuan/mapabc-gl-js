@@ -412,21 +412,21 @@ class BenchmarksTable extends React.Component {
     }
 }
 
-const versions = window.mapboxglVersions;
+const versions = window.mapabcglVersions;
 const benchmarks = [];
 const filter = window.location.hash.substr(1);
 
 let finished = false;
 let promise = Promise.resolve();
 
-for (const name in window.mapboxglBenchmarks) {
+for (const name in window.mapabcglBenchmarks) {
     if (filter && name !== filter)
         continue;
 
     const benchmark = { name, versions: [] };
     benchmarks.push(benchmark);
 
-    for (const ver in window.mapboxglBenchmarks[name]) {
+    for (const ver in window.mapabcglBenchmarks[name]) {
         const version = {
             name: ver,
             status: 'waiting',
@@ -441,7 +441,7 @@ for (const name in window.mapboxglBenchmarks) {
             version.status = 'running';
             update();
 
-            return window.mapboxglBenchmarks[name][ver].run()
+            return window.mapabcglBenchmarks[name][ver].run()
                 .then(measurements => {
                     // scale measurements down by iteration count, so that
                     // they represent (average) time for a single iteration

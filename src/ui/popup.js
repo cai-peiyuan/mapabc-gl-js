@@ -61,7 +61,7 @@ export type PopupOptions = {
  *  'left': [markerRadius, (markerHeight - markerRadius) * -1],
  *  'right': [-markerRadius, (markerHeight - markerRadius) * -1]
  *  };
- * var popup = new mapboxgl.Popup({offset: popupOffsets, className: 'my-class'})
+ * var popup = new mapabcgl.Popup({offset: popupOffsets, className: 'my-class'})
  *   .setLngLat(e.lngLat)
  *   .setHTML("<h1>Hello World!</h1>")
  *   .addTo(map);
@@ -125,7 +125,7 @@ export default class Popup extends Evented {
      * Removes the popup from the map it has been added to.
      *
      * @example
-     * var popup = new mapboxgl.Popup().addTo(map);
+     * var popup = new mapabcgl.Popup().addTo(map);
      * popup.remove();
      * @returns {Popup} `this`
      */
@@ -195,7 +195,7 @@ export default class Popup extends Evented {
      * @param text Textual content for the popup.
      * @returns {Popup} `this`
      * @example
-     * var popup = new mapboxgl.Popup()
+     * var popup = new mapabcgl.Popup()
      *   .setLngLat(e.lngLat)
      *   .setText('Hello, world!')
      *   .addTo(map);
@@ -237,7 +237,7 @@ export default class Popup extends Evented {
      * // create an element with the popup content
      * var div = window.document.createElement('div');
      * div.innerHTML = 'Hello, world!';
-     * var popup = new mapboxgl.Popup()
+     * var popup = new mapabcgl.Popup()
      *   .setLngLat(e.lngLat)
      *   .setDOMContent(div)
      *   .addTo(map);
@@ -254,10 +254,10 @@ export default class Popup extends Evented {
             DOM.remove(this._content);
         }
 
-        this._content = DOM.create('div', 'mapboxgl-popup-content', this._container);
+        this._content = DOM.create('div', 'mapabcgl-popup-content', this._container);
 
         if (this.options.closeButton) {
-            this._closeButton = DOM.create('button', 'mapboxgl-popup-close-button', this._content);
+            this._closeButton = DOM.create('button', 'mapabcgl-popup-close-button', this._content);
             this._closeButton.type = 'button';
             this._closeButton.setAttribute('aria-label', 'Close popup');
             this._closeButton.innerHTML = '&#215;';
@@ -269,8 +269,8 @@ export default class Popup extends Evented {
         if (!this._map || !this._lngLat || !this._content) { return; }
 
         if (!this._container) {
-            this._container = DOM.create('div', 'mapboxgl-popup', this._map.getContainer());
-            this._tip       = DOM.create('div', 'mapboxgl-popup-tip', this._container);
+            this._container = DOM.create('div', 'mapabcgl-popup', this._map.getContainer());
+            this._tip       = DOM.create('div', 'mapabcgl-popup-tip', this._container);
             this._container.appendChild(this._content);
 
             if (this.options.className) {

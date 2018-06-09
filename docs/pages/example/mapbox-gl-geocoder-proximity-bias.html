@@ -3,7 +3,7 @@
 <div id='map'></div>
 
 <script>
-var map = new mapboxgl.Map({
+var map = new mapabcgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
     center: [-79.4512, 43.6568],
@@ -11,7 +11,7 @@ var map = new mapboxgl.Map({
 });
 
 var geocoder = new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken
+    accessToken: mapabcgl.accessToken
 });
 map.addControl(geocoder);
 

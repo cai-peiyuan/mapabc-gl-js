@@ -1,18 +1,18 @@
 // @flow
 
-import mapboxgl from '../src';
+import mapabcgl from '../src';
 import accessToken from './lib/access_token';
-mapboxgl.accessToken = accessToken;
+mapabcgl.accessToken = accessToken;
 
-window.mapboxglVersions = window.mapboxglVersions || [];
-window.mapboxglBenchmarks = window.mapboxglBenchmarks || {};
+window.mapabcglVersions = window.mapabcglVersions || [];
+window.mapabcglBenchmarks = window.mapabcglBenchmarks || {};
 
 const version = process.env.BENCHMARK_VERSION;
-window.mapboxglVersions.push(version);
+window.mapabcglVersions.push(version);
 
 function register(Benchmark) {
-    window.mapboxglBenchmarks[Benchmark.name] = window.mapboxglBenchmarks[Benchmark.name] || {};
-    window.mapboxglBenchmarks[Benchmark.name][version] = new Benchmark();
+    window.mapabcglBenchmarks[Benchmark.name] = window.mapabcglBenchmarks[Benchmark.name] || {};
+    window.mapabcglBenchmarks[Benchmark.name][version] = new Benchmark();
 }
 
 import Layout from './benchmarks/layout';
@@ -53,5 +53,5 @@ setTimeout(() => {
     getWorkerPool().acquire(-1);
 }, 0);
 
-export default mapboxgl;
+export default mapabcgl;
 

@@ -1,14 +1,14 @@
 import { test } from 'mapbox-gl-js-test';
-import mapboxgl from '../../src';
+import mapabcgl from '../../src';
 
-test('mapboxgl', (t) => {
+test('mapabcgl', (t) => {
     t.test('version', (t) => {
-        t.ok(mapboxgl.version);
+        t.ok(mapabcgl.version);
         t.end();
     });
 
     t.test('workerCount', (t) => {
-        t.ok(typeof mapboxgl.workerCount === 'number');
+        t.ok(typeof mapabcgl.workerCount === 'number');
         t.end();
     });
     t.end();

@@ -102,8 +102,8 @@ class BoxZoomHandler {
         this._lastPos = pos;
 
         if (!this._box) {
-            this._box = DOM.create('div', 'mapboxgl-boxzoom', this._container);
-            this._container.classList.add('mapboxgl-crosshair');
+            this._box = DOM.create('div', 'mapabcgl-boxzoom', this._container);
+            this._container.classList.add('mapabcgl-crosshair');
             this._fireEvent('boxzoomstart', e);
         }
 
@@ -154,7 +154,7 @@ class BoxZoomHandler {
         window.document.removeEventListener('keydown', this._onKeyDown, false);
         window.document.removeEventListener('mouseup', this._onMouseUp, false);
 
-        this._container.classList.remove('mapboxgl-crosshair');
+        this._container.classList.remove('mapabcgl-crosshair');
 
         if (this._box) {
             DOM.remove(this._box);

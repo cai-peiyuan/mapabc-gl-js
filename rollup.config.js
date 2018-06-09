@@ -16,7 +16,7 @@ const config = [{
     // sources as strings, etc.
     input: ['src/index.js', 'src/source/worker.js'],
     output: {
-        dir: 'rollup/build/mapboxgl',
+        dir: 'rollup/build/mapabcgl',
         format: 'amd',
         sourcemap: 'inline',
         indent: false
@@ -27,10 +27,10 @@ const config = [{
 }, {
     // Next, bundle together the three "chunks" produced in the previous pass
     // into a single, final bundle. See rollup/bundle_prelude.js and
-    // rollup/mapboxgl.js for details.
-    input: 'rollup/mapboxgl.js',
+    // rollup/mapabcgl.js for details.
+    input: 'rollup/mapabcgl.js',
     output: {
-        name: 'mapboxgl',
+        name: 'mapabcgl',
         file: outputFile,
         format: 'umd',
         sourcemap: production ? true : 'inline',

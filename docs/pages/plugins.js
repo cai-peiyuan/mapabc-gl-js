@@ -72,8 +72,8 @@ const plugins = {
             "website": "https://github.com/alex3165/react-mapbox-gl",
             "description": md`provides a [React](https://facebook.github.io/react/) integration for Mapbox GL JS`
         },
-        "angular-mapboxgl-directive": {
-            "website": "https://github.com/Naimikan/angular-mapboxgl-directive",
+        "angular-mapabcgl-directive": {
+            "website": "https://github.com/Naimikan/angular-mapabcgl-directive",
             "description": md`provides an [AngularJS](https://angularjs.org/) directive for Mapbox GL JS`
         },
         "ngx-mapbox-gl": {

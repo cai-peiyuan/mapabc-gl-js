@@ -9,7 +9,7 @@
     cursor: pointer;
 }
 
-.mapboxgl-popup {
+.mapabcgl-popup {
     max-width: 200px;
 }
 
@@ -20,7 +20,7 @@
 <script>
 
 var monument = [-77.0353, 38.8895];
-var map = new mapboxgl.Map({
+var map = new mapabcgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
     center: monument,
@@ -28,7 +28,7 @@ var map = new mapboxgl.Map({
 });
 
 // create the popup
-var popup = new mapboxgl.Popup({ offset: 25 })
+var popup = new mapabcgl.Popup({ offset: 25 })
     .setText('Construction on the Washington Monument began in 1848.');
 
 // create DOM element for the marker
@@ -36,7 +36,7 @@ var el = document.createElement('div');
 el.id = 'marker';
 
 // create the marker
-new mapboxgl.Marker(el)
+new mapabcgl.Marker(el)
     .setLngLat(monument)
     .setPopup(popup) // sets a popup on this marker
     .addTo(map);

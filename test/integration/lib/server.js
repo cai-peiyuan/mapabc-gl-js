@@ -8,11 +8,11 @@ const fs = require('fs');
 
 module.exports = function () {
     const integrationMount = st({path: path.join(__dirname, '..')});
-    const mapboxGLStylesMount = st({path: path.dirname(require.resolve('mapbox-gl-styles')), url: 'mapbox-gl-styles'});
+    const mapabcglStylesMount = st({path: path.dirname(require.resolve('mapbox-gl-styles')), url: 'mapbox-gl-styles'});
     const mapboxMVTFixturesMount = st({path: path.dirname(require.resolve('@mapbox/mvt-fixtures')), url: 'mvt-fixtures'});
     const server = http.createServer((req, res) => {
         return mapboxMVTFixturesMount(req, res, () => {
-            return mapboxGLStylesMount(req, res, () => {
+            return mapabcglStylesMount(req, res, () => {
                 return integrationMount(req, res);
             });
         });
