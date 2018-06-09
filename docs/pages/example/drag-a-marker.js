@@ -5,7 +5,7 @@ description: >-
   display.
 tags:
   - user-interaction
-pathname: /mapbox-gl-js/example/drag-a-marker/
+pathname: /mapabc-gl-js/example/drag-a-marker/
 ---*/
 import Example from '../../components/example';
 import html from './drag-a-marker.html';

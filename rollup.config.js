@@ -3,7 +3,7 @@ import sourcemaps from 'rollup-plugin-sourcemaps';
 import {plugins} from './build/rollup_plugins';
 
 const production = process.env.BUILD === 'production';
-const outputFile = production ? 'dist/mapbox-gl.js' : 'dist/mapbox-gl-dev.js';
+const outputFile = production ? 'dist/mapabc-gl.js' : 'dist/mapabc-gl-dev.js';
 
 const config = [{
     // First, use code splitting to bundle GL JS into three "chunks":

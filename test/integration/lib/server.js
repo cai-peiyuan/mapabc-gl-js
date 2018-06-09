@@ -8,10 +8,10 @@ const fs = require('fs');
 
 module.exports = function () {
     const integrationMount = st({path: path.join(__dirname, '..')});
-    const mapabcglStylesMount = st({path: path.dirname(require.resolve('mapbox-gl-styles')), url: 'mapbox-gl-styles'});
-    const mapboxMVTFixturesMount = st({path: path.dirname(require.resolve('@mapbox/mvt-fixtures')), url: 'mvt-fixtures'});
+    const mapabcglStylesMount = st({path: path.dirname(require.resolve('mapabc-gl-styles')), url: 'mapabc-gl-styles'});
+    const mapabcMVTFixturesMount = st({path: path.dirname(require.resolve('@mapabc/mvt-fixtures')), url: 'mvt-fixtures'});
     const server = http.createServer((req, res) => {
-        return mapboxMVTFixturesMount(req, res, () => {
+        return mapabcMVTFixturesMount(req, res, () => {
             return mapabcglStylesMount(req, res, () => {
                 return integrationMount(req, res);
             });
@@ -23,19 +23,19 @@ module.exports = function () {
     }
 
     function localizeMapboxSpriteURL(url) {
-        return url.replace(/^mapbox:\/\//, 'http://localhost:2900/');
+        return url.replace(/^mapabc:\/\//, 'http://localhost:2900/');
     }
 
     function localizeMapboxFontsURL(url) {
-        return url.replace(/^mapbox:\/\/fonts/, 'http://localhost:2900/glyphs');
+        return url.replace(/^mapabc:\/\/fonts/, 'http://localhost:2900/glyphs');
     }
 
     function localizeMapboxTilesURL(url) {
-        return url.replace(/^mapbox:\/\//, 'http://localhost:2900/tiles/');
+        return url.replace(/^mapabc:\/\//, 'http://localhost:2900/tiles/');
     }
 
     function localizeMapboxTilesetURL(url) {
-        return url.replace(/^mapbox:\/\//, 'http://localhost:2900/tilesets/');
+        return url.replace(/^mapabc:\/\//, 'http://localhost:2900/tilesets/');
     }
 
     function localizeSourceURLs(source) {
@@ -99,8 +99,8 @@ module.exports = function () {
                         let styleJSON;
                         try {
                             const relativePath = op[1].replace(/^local:\/\//, '');
-                            if (relativePath.startsWith('mapbox-gl-styles')) {
-                                styleJSON = fs.readFileSync(path.join(path.dirname(require.resolve('mapbox-gl-styles')), '..', relativePath));
+                            if (relativePath.startsWith('mapabc-gl-styles')) {
+                                styleJSON = fs.readFileSync(path.join(path.dirname(require.resolve('mapabc-gl-styles')), '..', relativePath));
                             } else {
                                 styleJSON = fs.readFileSync(path.join(__dirname, '..', relativePath));
                             }

@@ -1,5 +1,5 @@
 
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 import { createMap } from '../../../util';
 import ScaleControl from '../../../../src/ui/control/scale_control';
 

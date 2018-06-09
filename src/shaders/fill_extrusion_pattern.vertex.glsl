@@ -20,12 +20,12 @@ varying vec2 v_pos_b;
 varying vec4 v_lighting;
 varying float v_directional;
 
-#pragma mapbox: define lowp float base
-#pragma mapbox: define lowp float height
+#pragma mapabc: define lowp float base
+#pragma mapabc: define lowp float height
 
 void main() {
-    #pragma mapbox: initialize lowp float base
-    #pragma mapbox: initialize lowp float height
+    #pragma mapabc: initialize lowp float base
+    #pragma mapabc: initialize lowp float height
 
     vec3 normal = a_normal_ed.xyz;
     float edgedistance = a_normal_ed.w;

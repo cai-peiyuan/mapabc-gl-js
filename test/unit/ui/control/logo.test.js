@@ -1,4 +1,4 @@
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 import { createMap as globalCreateMap } from '../../../util';
 import VectorTileSource from '../../../../src/source/vector_tile_source';
 
@@ -30,7 +30,7 @@ function createSource(options, logoRequired) {
     source.on('error', (e) => {
         throw e.error;
     });
-    const logoFlag = "mapbox_logo";
+    const logoFlag = "mapabc_logo";
     source[logoFlag] = logoRequired === undefined ? true : logoRequired;
     return source;
 }
@@ -54,7 +54,7 @@ test('LogoControl appears in the position specified by the position option', (t)
     });
 });
 
-test('LogoControl is not displayed when the mapbox_logo property is false', (t) => {
+test('LogoControl is not displayed when the mapabc_logo property is false', (t) => {
     const map = createMap(t, 'top-left', false);
     map.on('load', () => {
         t.equal(map.getContainer().querySelectorAll('.mapabcgl-ctrl-top-left > .mapabcgl-ctrl')[0].style.display, 'none');

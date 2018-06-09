@@ -17,7 +17,7 @@
     },
     "metadata": {
       "type": "*",
-      "doc": "Arbitrary properties useful to track with the stylesheet, but do not influence rendering. Properties should be prefixed to avoid collisions, like 'mapbox:'."
+      "doc": "Arbitrary properties useful to track with the stylesheet, but do not influence rendering. Properties should be prefixed to avoid collisions, like 'mapabc:'."
     },
     "center": {
       "type": "array",
@@ -62,21 +62,21 @@
       "type": "sources",
       "doc": "Data source specifications.",
       "example": {
-        "mapbox-streets": {
+        "mapabc-streets": {
           "type": "vector",
-          "url": "mapbox://mapbox.mapbox-streets-v6"
+          "url": "mapabc://mapabc.mapabc-streets-v6"
         }
       }
     },
     "sprite": {
       "type": "string",
       "doc": "A base URL for retrieving the sprite image and metadata. The extensions `.png`, `.json` and scale factor `@2x.png` will be automatically appended. This property is required if any layer uses the `background-pattern`, `fill-pattern`, `line-pattern`, `fill-extrusion-pattern`, or `icon-image` properties.",
-      "example": "mapbox://sprites/mapbox/bright-v8"
+      "example": "mapabc://sprites/mapabc/bright-v8"
     },
     "glyphs": {
       "type": "string",
       "doc": "A URL template for loading signed-distance-field glyph sets in PBF format. The URL must include `{fontstack}` and `{range}` tokens. This property is required if any layer uses the `text-field` layout property.",
-      "example": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf"
+      "example": "mapabc://fonts/mapabc/{fontstack}/{range}.pbf"
     },
     "transition": {
       "type": "transition",
@@ -94,7 +94,7 @@
       "example": [
         {
           "id": "water",
-          "source": "mapbox-streets",
+          "source": "mapabc-streets",
           "source-layer": "water",
           "type": "fill",
           "paint": {
@@ -131,7 +131,7 @@
     },
     "url": {
       "type": "string",
-      "doc": "A URL to a TileJSON resource. Supported protocols are `http:`, `https:`, and `mapbox://<mapid>`."
+      "doc": "A URL to a TileJSON resource. Supported protocols are `http:`, `https:`, and `mapabc://<mapid>`."
     },
     "tiles": {
       "type": "array",
@@ -182,7 +182,7 @@
     },
     "url": {
       "type": "string",
-      "doc": "A URL to a TileJSON resource. Supported protocols are `http:`, `https:`, and `mapbox://<mapid>`."
+      "doc": "A URL to a TileJSON resource. Supported protocols are `http:`, `https:`, and `mapabc://<mapid>`."
     },
     "tiles": {
       "type": "array",
@@ -252,7 +252,7 @@
     },
     "url": {
       "type": "string",
-      "doc": "A URL to a TileJSON resource. Supported protocols are `http:`, `https:`, and `mapbox://<mapid>`."
+      "doc": "A URL to a TileJSON resource. Supported protocols are `http:`, `https:`, and `mapabc://<mapid>`."
     },
     "tiles": {
       "type": "array",
@@ -297,11 +297,11 @@
         "terrarium": {
           "doc": "Terrarium format PNG tiles. See https://aws.amazon.com/es/public-datasets/terrain/ for more info."
         },
-        "mapbox": {
-          "doc": "Mapbox Terrain RGB tiles. See https://www.mapbox.com/help/access-elevation-data/#mapbox-terrain-rgb for more info."
+        "mapabc": {
+          "doc": "Mapbox Terrain RGB tiles. See https://www.mapabc.com/help/access-elevation-data/#mapabc-terrain-rgb for more info."
         }
       },
-      "default": "mapbox",
+      "default": "mapabc",
       "doc": "The encoding used by this source. Mapbox Terrain RGB is used by default"
     },
     "*": {
@@ -539,7 +539,7 @@
     },
     "metadata": {
       "type": "*",
-      "doc": "Arbitrary properties useful to track with the layer, but do not influence rendering. Properties should be prefixed to avoid collisions, like 'mapbox:'."
+      "doc": "Arbitrary properties useful to track with the layer, but do not influence rendering. Properties should be prefixed to avoid collisions, like 'mapabc:'."
     },
     "source": {
       "type": "string",
@@ -3043,7 +3043,7 @@
         }
       },
       "is-supported-script": {
-        "doc": "Returns `true` if the input string is expected to render legibly. Returns `false` if the input string contains sections that cannot be rendered without potential loss of meaning (e.g. Indic scripts that require complex text shaping, or right-to-left scripts if the the `mapbox-gl-rtl-text` plugin is not in use in Mapbox GL JS).",
+        "doc": "Returns `true` if the input string is expected to render legibly. Returns `false` if the input string contains sections that cannot be rendered without potential loss of meaning (e.g. Indic scripts that require complex text shaping, or right-to-left scripts if the the `mapabc-gl-rtl-text` plugin is not in use in Mapbox GL JS).",
         "group": "String"
       },
       "upcase": {

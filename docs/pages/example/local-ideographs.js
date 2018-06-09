@@ -16,7 +16,7 @@ description: >-
   'sans-serif'.
 tags:
   - internationalization
-pathname: /mapbox-gl-js/example/local-ideographs/
+pathname: /mapabc-gl-js/example/local-ideographs/
 ---*/
 import Example from '../../components/example';
 import html from './local-ideographs.html';

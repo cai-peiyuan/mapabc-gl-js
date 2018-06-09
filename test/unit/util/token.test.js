@@ -1,4 +1,4 @@
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 import resolveTokens from '../../../src/util/token';
 
 test('resolveToken', (t) => {
@@ -35,7 +35,7 @@ test('resolveToken', (t) => {
     // Special characters in token.
     t.equal(resolveTokens({'dashed-property': 'dashed'}, '{dashed-property}'), 'dashed');
     t.equal(resolveTokens({'HØYDE': 150}, '{HØYDE} m'), '150 m');
-    t.equal(resolveTokens({'$special:characters;': 'mapbox'}, '{$special:characters;}'), 'mapbox');
+    t.equal(resolveTokens({'$special:characters;': 'mapabc'}, '{$special:characters;}'), 'mapabc');
 
     t.end();
 });

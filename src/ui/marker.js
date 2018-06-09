@@ -3,7 +3,7 @@
 import DOM from '../util/dom';
 import window from '../util/window';
 import LngLat from '../geo/lng_lat';
-import Point from '@mapbox/point-geometry';
+import Point from '@mapabc/point-geometry';
 import smartWrap from '../util/smart_wrap';
 import { bindAll, extend } from '../util/util';
 import { type Anchor, anchorTranslate, applyAnchorClass } from './anchor';
@@ -34,7 +34,7 @@ type Options = {
  * var marker = new mapabcgl.Marker()
  *   .setLngLat([30.5, 50.5])
  *   .addTo(map);
- * @see [Add custom icons with Markers](https://www.mapbox.com/mapbox-gl-js/example/custom-marker-icons/)
+ * @see [Add custom icons with Markers](https://www.mapabc.com/mapabc-gl-js/example/custom-marker-icons/)
  */
 export default class Marker extends Evented {
     _map: Map;

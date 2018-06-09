@@ -1,9 +1,9 @@
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 import fs from 'fs';
 import path from 'path';
 import Protobuf from 'pbf';
-import { VectorTile } from '@mapbox/vector-tile';
-import Point from '@mapbox/point-geometry';
+import { VectorTile } from '@mapabc/vector-tile';
+import Point from '@mapabc/point-geometry';
 import segment from '../../../src/data/segment';
 import FillBucket from '../../../src/data/bucket/fill_bucket';
 import FillStyleLayer from '../../../src/style/style_layer/fill_style_layer';

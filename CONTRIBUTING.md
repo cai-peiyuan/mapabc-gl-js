@@ -20,12 +20,12 @@ brew install yarn
 
 Clone the repository
 ```bash
-git clone git@github.com:mapbox/mapbox-gl-js.git
+git clone git@github.com:mapabc/mapabc-gl-js.git
 ```
 
 Install node module dependencies
 ```bash
-cd mapbox-gl-js &&
+cd mapabc-gl-js &&
 yarn install
 ```
 
@@ -39,12 +39,12 @@ sudo apt-get install build-essential git nodejs yarn libglew-dev libxi-dev
 
 Clone the repository
 ```bash
-git clone git@github.com:mapbox/mapbox-gl-js.git
+git clone git@github.com:mapabc/mapabc-gl-js.git
 ```
 
 Install node module dependencies
 ```bash
-cd mapbox-gl-js &&
+cd mapabc-gl-js &&
 yarn install
 ```
 
@@ -54,13 +54,13 @@ Install [git](https://git-scm.com/), [node.js](https://nodejs.org/) (version 4 o
 
 Clone the repository
 ```bash
-git clone git@github.com:mapbox/mapbox-gl-js.git
+git clone git@github.com:mapabc/mapabc-gl-js.git
 ```
 
 
 Install node module dependencies
 ```bash
-cd mapbox-gl-js
+cd mapabc-gl-js
 yarn install
 ```
 
@@ -84,7 +84,7 @@ Open the debug page at [http://localhost:9966/debug](http://localhost:9966/debug
 
 ## Creating a Standalone Build
 
-A standalone build allows you to turn the contents of this repository into `mapbox-gl.js` and `mapbox-gl.css` files that can be included on an html page.
+A standalone build allows you to turn the contents of this repository into `mapabc-gl.js` and `mapabc-gl.css` files that can be included on an html page.
 
 To create a standalone build, run
 ```bash
@@ -92,19 +92,19 @@ yarn run build-min
 yarn run build-css
 ```
 
-Once those commands finish, you will have a standalone build at `dist/mapbox-gl.js` and `dist/mapbox-gl.css`
+Once those commands finish, you will have a standalone build at `dist/mapabc-gl.js` and `dist/mapabc-gl.css`
 
 ## Writing & Running Tests
 
-See [`test/README.md`](https://github.com/mapbox/mapbox-gl-js/blob/master/test/README.md).
+See [`test/README.md`](https://github.com/mapabc/mapabc-gl-js/blob/master/test/README.md).
 
 ## Writing & Running Benchmarks
 
-See [`bench/README.md`](https://github.com/mapbox/mapbox-gl-js/blob/master/bench/README.md).
+See [`bench/README.md`](https://github.com/mapabc/mapabc-gl-js/blob/master/bench/README.md).
 
 ## Code Conventions
 
-* We use [`error` events](https://www.mapbox.com/mapbox-gl-js/api/#Map.event:error) to report user errors.
+* We use [`error` events](https://www.mapabc.com/mapabc-gl-js/api/#Map.event:error) to report user errors.
 * We use [`assert`](https://nodejs.org/api/assert.html) to check invariants that are not likely to be caused by user error. These `assert` statements are stripped out of production builds.
 * We use the following ES6 features:
   * `let`/`const`
@@ -134,7 +134,7 @@ The conventions for module exports are:
 
 ## Documentation Conventions
 
-See [`docs/README.md`](https://github.com/mapbox/mapbox-gl-js/blob/master/docs/README.md).
+See [`docs/README.md`](https://github.com/mapabc/mapabc-gl-js/blob/master/docs/README.md).
 
 ### Github Issue Labels
 
@@ -166,7 +166,7 @@ We have divided our labels into categories to make them easier to use.
 
 ### Misc
 
-- [drawing antialiased lines](https://www.mapbox.com/blog/drawing-antialiased-lines/)
-- [drawing text with signed distance fields](https://www.mapbox.com/blog/text-signed-distance-fields/)
-- [label placement](https://www.mapbox.com/blog/placing-labels/)
+- [drawing antialiased lines](https://www.mapabc.com/blog/drawing-antialiased-lines/)
+- [drawing text with signed distance fields](https://www.mapabc.com/blog/text-signed-distance-fields/)
+- [label placement](https://www.mapabc.com/blog/placing-labels/)
 - [distance fields](http://bytewrangler.blogspot.com/2011/10/signed-distance-fields.html)

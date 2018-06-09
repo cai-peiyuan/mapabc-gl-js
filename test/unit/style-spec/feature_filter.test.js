@@ -1,4 +1,4 @@
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 import filter from '../../../src/style-spec/feature_filter';
 
 test('filter', (t) => {

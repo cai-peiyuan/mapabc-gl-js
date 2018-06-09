@@ -4,7 +4,7 @@ import { extend, bindAll } from '../util/util';
 import { Event, Evented } from '../util/evented';
 import DOM from '../util/dom';
 import LngLat from '../geo/lng_lat';
-import Point from '@mapbox/point-geometry';
+import Point from '@mapabc/point-geometry';
 import window from '../util/window';
 import smartWrap from '../util/smart_wrap';
 import { type Anchor, anchorTranslate, applyAnchorClass } from './anchor';
@@ -65,10 +65,10 @@ export type PopupOptions = {
  *   .setLngLat(e.lngLat)
  *   .setHTML("<h1>Hello World!</h1>")
  *   .addTo(map);
- * @see [Display a popup](https://www.mapbox.com/mapbox-gl-js/example/popup/)
- * @see [Display a popup on hover](https://www.mapbox.com/mapbox-gl-js/example/popup-on-hover/)
- * @see [Display a popup on click](https://www.mapbox.com/mapbox-gl-js/example/popup-on-click/)
- * @see [Attach a popup to a marker instance](https://www.mapbox.com/mapbox-gl-js/example/set-popup/)
+ * @see [Display a popup](https://www.mapabc.com/mapabc-gl-js/example/popup/)
+ * @see [Display a popup on hover](https://www.mapabc.com/mapabc-gl-js/example/popup-on-hover/)
+ * @see [Display a popup on click](https://www.mapabc.com/mapabc-gl-js/example/popup-on-click/)
+ * @see [Attach a popup to a marker instance](https://www.mapabc.com/mapabc-gl-js/example/set-popup/)
  */
 export default class Popup extends Evented {
     _map: Map;

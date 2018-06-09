@@ -3,11 +3,11 @@
   "name": "Empty",
   "sources": {
     "composite": {
-      "url": "mapbox://mapbox.mapbox-streets-v7",
+      "url": "mapabc://mapabc.mapabc-streets-v7",
       "type": "vector"
     }
   },
-  "sprite": "mapbox://sprites/mapbox/light-v9",
-  "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
+  "sprite": "mapabc://sprites/mapabc/light-v9",
+  "glyphs": "mapabc://fonts/mapabc/{fontstack}/{range}.pbf",
   "layers": []
 }

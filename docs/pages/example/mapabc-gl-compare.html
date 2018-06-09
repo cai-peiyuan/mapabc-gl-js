@@ -1,0 +1,45 @@
+<style>
+body {
+    overflow: hidden;
+}
+
+body * {
+   -webkit-touch-callout: none;
+     -webkit-user-select: none;
+        -moz-user-select: none;
+         -ms-user-select: none;
+             user-select: none;
+}
+
+.map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+</style>
+<script src='https://api.mapabc.com/mapabc-gl-js/plugins/mapabc-gl-compare/v0.1.0/mapabc-gl-compare.js'></script>
+<link rel='stylesheet' href='https://api.mapabc.com/mapabc-gl-js/plugins/mapabc-gl-compare/v0.1.0/mapabc-gl-compare.css' type='text/css' />
+
+<div id='before' class='map'></div>
+<div id='after' class='map'></div>
+<script>
+var beforeMap = new mapabcgl.Map({
+    container: 'before',
+    style: 'mapabc://styles/mapabc/light-v9',
+    center: [0, 0],
+    zoom: 0
+});
+
+var afterMap = new mapabcgl.Map({
+    container: 'after',
+    style: 'mapabc://styles/mapabc/dark-v9',
+    center: [0, 0],
+    zoom: 0
+});
+
+var map = new mapabcgl.Compare(beforeMap, afterMap, {
+    // Set this to enable comparing two maps by mouse movement:
+    // mousemove: true
+});
+</script>

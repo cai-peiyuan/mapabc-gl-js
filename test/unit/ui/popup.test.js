@@ -1,10 +1,10 @@
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 import window from '../../../src/util/window';
 import { createMap as globalCreateMap } from '../../util';
 import Popup from '../../../src/ui/popup';
 import LngLat from '../../../src/geo/lng_lat';
-import Point from '@mapbox/point-geometry';
-import { click as simulateClick } from 'mapbox-gl-js-test/simulate_interaction';
+import Point from '@mapabc/point-geometry';
+import { click as simulateClick } from 'mapabc-gl-js-test/simulate_interaction';
 
 const containerWidth = 512;
 const containerHeight = 512;

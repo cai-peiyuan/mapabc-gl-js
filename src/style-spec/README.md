@@ -7,13 +7,13 @@ This directory contains code and reference files that define the Mapbox GL style
 The Mapbox GL style specification and utilities are published as a seperate npm
 package so that they can be installed without the bulk of GL JS.
 
-    npm install @mapbox/mapbox-gl-style-spec
+    npm install @mapabc/mapabc-gl-style-spec
 
 ## CLI Tools
 
 If you install this package globally, you will have access to several CLI tools.
 
-    npm install @mapbox/mapbox-gl-style-spec --global
+    npm install @mapabc/mapabc-gl-style-spec --global
 
 
 ### `gl-style-composite`
@@ -21,7 +21,7 @@ If you install this package globally, you will have access to several CLI tools.
 $ gl-style-composite style.json
 ```
 
-Will take a non-composited style and produce a [composite style](https://www.mapbox.com/blog/better-label-placement-in-mapbox-studio/).
+Will take a non-composited style and produce a [composite style](https://www.mapabc.com/blog/better-label-placement-in-mapabc-studio/).
 
 ### `gl-style-migrate`
 

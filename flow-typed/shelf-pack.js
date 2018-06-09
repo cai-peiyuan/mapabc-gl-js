@@ -1,4 +1,4 @@
-declare module "@mapbox/shelf-pack" {
+declare module "@mapabc/shelf-pack" {
     declare type Bin = {
         id: number|string,
         x: number,

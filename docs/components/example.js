@@ -1,14 +1,14 @@
 import React from 'react';
-import {prefixUrl} from '@mapbox/batfish/modules/prefix-url';
+import {prefixUrl} from '@mapabc/batfish/modules/prefix-url';
 import urls from './urls';
 import md from './md';
 import PageShell from './page_shell';
 import LeftNav from './left_nav';
 import TopNav from './top_nav';
 import {highlightMarkup} from './prism_highlight';
-import supported from '@mapbox/mapbox-gl-supported';
+import supported from '@mapabc/mapabc-gl-supported';
 import {copy} from 'execcommand-copy';
-import examples from '@mapbox/batfish/data/examples'; // eslint-disable-line import/no-unresolved
+import examples from '@mapabc/batfish/data/examples'; // eslint-disable-line import/no-unresolved
 import entries from 'object.entries';
 
 const tags = {

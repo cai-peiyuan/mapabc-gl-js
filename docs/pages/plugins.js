@@ -1,7 +1,7 @@
 import React from 'react';
 import slug from 'slugg';
-import {prefixUrl} from '@mapbox/batfish/modules/prefix-url';
-import md from '@mapbox/batfish/modules/md'; // eslint-disable-line import/no-unresolved
+import {prefixUrl} from '@mapabc/batfish/modules/prefix-url';
+import md from '@mapabc/batfish/modules/md'; // eslint-disable-line import/no-unresolved
 import PageShell from '../components/page_shell';
 import LeftNav from "../components/left_nav";
 import TopNav from "../components/top_nav";
@@ -15,44 +15,44 @@ const meta = {
 
 const plugins = {
     "User Interface Plugins": {
-        "mapbox-gl-accessibility": {
-            "website": "https://github.com/mapbox/mapbox-gl-accessibility/",
+        "mapabc-gl-accessibility": {
+            "website": "https://github.com/mapabc/mapabc-gl-accessibility/",
             "description": "integrates with ARIA-compatible screen readers for users with visual impairments"
         },
-        "mapbox-gl-boundaries": {
-            "website": "https://github.com/mapbox/mapbox-gl-boundaries",
+        "mapabc-gl-boundaries": {
+            "website": "https://github.com/mapabc/mapabc-gl-boundaries",
             "description": "enables users to show/hide disputed borders"
         },
-        "mapbox-gl-compare": {
-            "website": "https://github.com/mapbox/mapbox-gl-compare",
+        "mapabc-gl-compare": {
+            "website": "https://github.com/mapabc/mapabc-gl-compare",
             "description": "enables users to compare two maps by swiping left and right",
-            "example": "mapbox-gl-compare"
+            "example": "mapabc-gl-compare"
         },
-        "mapbox-gl-directions": {
-            "website": "https://github.com/mapbox/mapbox-gl-directions",
+        "mapabc-gl-directions": {
+            "website": "https://github.com/mapabc/mapabc-gl-directions",
             "description": "adds a control which allows users to plot driving, walking, and cycling directions on the map",
-            "example": "mapbox-gl-directions"
+            "example": "mapabc-gl-directions"
         },
-        "mapbox-gl-draw": {
-            "website": "https://github.com/mapbox/mapbox-gl-draw",
+        "mapabc-gl-draw": {
+            "website": "https://github.com/mapabc/mapabc-gl-draw",
             "description": "adds support for drawing and editing features on Mapbox GL JS maps",
-            "example": "mapbox-gl-draw"
+            "example": "mapabc-gl-draw"
         },
-        "mapbox-gl-geocoder": {
-            "website": "https://github.com/mapbox/mapbox-gl-geocoder",
+        "mapabc-gl-geocoder": {
+            "website": "https://github.com/mapabc/mapabc-gl-geocoder",
             "description": "adds a Geocoder control to Mapbox GL JS",
-            "example": "mapbox-gl-geocoder"
+            "example": "mapabc-gl-geocoder"
         }
     },
     "Map Rendering Plugins": {
-        "mapbox-gl-language": {
-            "website": "https://github.com/mapbox/mapbox-gl-language/",
+        "mapabc-gl-language": {
+            "website": "https://github.com/mapabc/mapabc-gl-language/",
             "description": "automatically localizes the map into the user’s language"
         },
-        "mapbox-gl-rtl-text": {
-            "website": "https://github.com/mapbox/mapbox-gl-rtl-text",
+        "mapabc-gl-rtl-text": {
+            "website": "https://github.com/mapabc/mapabc-gl-rtl-text",
             "description": "adds right-to-left text support to Mapbox GL JS",
-            "example": "mapbox-gl-rtl-text"
+            "example": "mapabc-gl-rtl-text"
         },
         "deck.gl": {
             "website": "https://github.com/uber/deck.gl",
@@ -68,16 +68,16 @@ const plugins = {
             "website": "https://github.com/yvanvds/wtMapbox",
             "description": md`provides a [Webtoolkit](https://www.webtoolkit.eu/wt) integration for Mapbox GL JS`
         },
-        "react-mapbox-gl": {
-            "website": "https://github.com/alex3165/react-mapbox-gl",
+        "react-mapabc-gl": {
+            "website": "https://github.com/alex3165/react-mapabc-gl",
             "description": md`provides a [React](https://facebook.github.io/react/) integration for Mapbox GL JS`
         },
         "angular-mapabcgl-directive": {
             "website": "https://github.com/Naimikan/angular-mapabcgl-directive",
             "description": md`provides an [AngularJS](https://angularjs.org/) directive for Mapbox GL JS`
         },
-        "ngx-mapbox-gl": {
-            "website": "https://github.com/Wykks/ngx-mapbox-gl",
+        "ngx-mapabc-gl": {
+            "website": "https://github.com/Wykks/ngx-mapabc-gl",
             "description": md`provides an [Angular](https://angular.io/) integration for Mapbox GL JS`
         }
     },
@@ -86,35 +86,35 @@ const plugins = {
             "website": "http://turfjs.org/",
             "description": "provides advanced geospatial analysis tools"
         },
-        "mapbox-gl-layer-groups": {
-            "website": "https://github.com/mapbox/mapbox-gl-layer-groups",
+        "mapabc-gl-layer-groups": {
+            "website": "https://github.com/mapabc/mapabc-gl-layer-groups",
             "description": "manages layer groups in Mapbox GL JS"
         },
         "simplespec-to-gl-style": {
-            "website": "https://github.com/mapbox/simplespec-to-gl-style",
-            "description": md`converts GeoJSON styled with [\`simplestyle-spec\`](https://github.com/mapbox/simplestyle-spec/) to a Mapbox GL Style`
+            "website": "https://github.com/mapabc/simplespec-to-gl-style",
+            "description": md`converts GeoJSON styled with [\`simplestyle-spec\`](https://github.com/mapabc/simplestyle-spec/) to a Mapbox GL Style`
         },
-        "mapbox-gl-supported": {
-            "website": "https://github.com/mapbox/mapbox-gl-supported",
+        "mapabc-gl-supported": {
+            "website": "https://github.com/mapabc/mapabc-gl-supported",
             "description": "determines if the current browser supports Mapbox GL JS",
-            "example": "mapbox-gl-supported"
+            "example": "mapabc-gl-supported"
         },
-        "mapbox-gl-sync-move": {
-            "website": "https://github.com/mapbox/mapbox-gl-sync-move",
+        "mapabc-gl-sync-move": {
+            "website": "https://github.com/mapabc/mapabc-gl-sync-move",
             "description": "syncs movement between two Mapbox GL JS maps"
         }
     },
     "Development Tools": {
-        "mapbox-gl-js-mock": {
-            "website": "https://github.com/mapbox/mapbox-gl-js-mock",
+        "mapabc-gl-js-mock": {
+            "website": "https://github.com/mapabc/mapabc-gl-js-mock",
             "description": md`is a [mock](https://en.wikipedia.org/wiki/Mock_object) of Mapbox GL JS`
         },
-        "mapbox-gl-inspect": {
-            "website": "https://github.com/lukasmartinelli/mapbox-gl-inspect",
+        "mapabc-gl-inspect": {
+            "website": "https://github.com/lukasmartinelli/mapabc-gl-inspect",
             "description": "adds an inspect control to view vector source features and properties"
         },
-        "mapbox-gl-fps": {
-            "website": "https://github.com/MazeMap/mapbox-gl-fps",
+        "mapabc-gl-fps": {
+            "website": "https://github.com/MazeMap/mapabc-gl-fps",
             "description": "A frames-per-seconds GUI control and measurer with statistic report output."
         }
     }

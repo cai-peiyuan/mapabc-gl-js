@@ -1,5 +1,5 @@
-import { test } from 'mapbox-gl-js-test';
-import Point from '@mapbox/point-geometry';
+import { test } from 'mapabc-gl-js-test';
+import Point from '@mapabc/point-geometry';
 import getAnchors from '../../../src/symbol/get_anchors';
 
 const TILE_EXTENT = 4096;

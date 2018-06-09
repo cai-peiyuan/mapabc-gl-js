@@ -57,7 +57,7 @@
 <script>
 var map = new mapabcgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/light-v9',
+    style: 'mapabc://styles/mapabc/light-v9',
     center: [-98, 38.88],
     minZoom: 3,
     zoom: 3
@@ -69,7 +69,7 @@ map.on('load', function() {
 
     map.addSource('population', {
         'type': 'vector',
-        'url': 'mapbox://mapbox.660ui7x6'
+        'url': 'mapabc://mapabc.660ui7x6'
     });
 
     map.addLayer({

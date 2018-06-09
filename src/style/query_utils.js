@@ -1,6 +1,6 @@
 // @flow
 
-import Point from '@mapbox/point-geometry';
+import Point from '@mapabc/point-geometry';
 
 import type {PossiblyEvaluatedPropertyValue} from "./properties";
 import type StyleLayer from '../style/style_layer';

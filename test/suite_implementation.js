@@ -4,7 +4,7 @@ import config from '../src/util/config';
 import window from '../src/util/window';
 import browser from '../src/util/browser';
 import {plugin as rtlTextPlugin} from '../src/source/rtl_text_plugin';
-import rtlText from '@mapbox/mapbox-gl-rtl-text';
+import rtlText from '@mapabc/mapabc-gl-rtl-text';
 import fs from 'fs';
 import path from 'path';
 

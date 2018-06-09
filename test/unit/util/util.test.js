@@ -1,10 +1,10 @@
 // @flow
 
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 
 import Coordinate from '../../../src/geo/coordinate';
 import { easeCubicInOut, keysDifference, extend, pick, uniqueId, getCoordinatesCenter, bindAll, asyncAll, clamp, wrap, bezier, endsWith, mapObject, filterObject, deepEqual, clone, arraysIntersect, isCounterClockwise, isClosedPolygon, parseCacheControl } from '../../../src/util/util';
-import Point from '@mapbox/point-geometry';
+import Point from '@mapabc/point-geometry';
 
 test('util', (t) => {
     t.equal(easeCubicInOut(0), 0, 'easeCubicInOut=0');
@@ -123,8 +123,8 @@ test('util', (t) => {
     });
 
     t.test('endsWith', (t) => {
-        t.ok(endsWith('mapbox', 'box'));
-        t.notOk(endsWith('mapbox', 'map'));
+        t.ok(endsWith('mapabc', 'box'));
+        t.notOk(endsWith('mapabc', 'map'));
         t.end();
     });
 

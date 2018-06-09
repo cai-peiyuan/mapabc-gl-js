@@ -1,5 +1,5 @@
 
-import flowRemoveTypes from '@mapbox/flow-remove-types';
+import flowRemoveTypes from '@mapabc/flow-remove-types';
 import buble from 'rollup-plugin-buble';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
@@ -30,7 +30,7 @@ export const plugins = () => [
     }),
     commonjs({
         namedExports: {
-            '@mapbox/whoots-js': ['getTileBBox']
+            '@mapabc/whoots-js': ['getTileBBox']
         }
     }),
     production ? uglify() : false

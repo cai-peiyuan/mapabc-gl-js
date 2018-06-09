@@ -1,4 +1,4 @@
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 import mapabcgl from '../../../src';
 import WorkerPool from '../../../src/util/worker_pool';
 

@@ -1,4 +1,4 @@
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 import CanvasSource from '../../../src/source/canvas_source';
 import Transform from '../../../src/geo/transform';
 import { Event, Evented } from '../../../src/util/evented';

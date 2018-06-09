@@ -1,4 +1,4 @@
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 import RasterTileSource from '../../../src/source/raster_tile_source';
 import window from '../../../src/util/window';
 import { OverscaledTileID } from '../../../src/source/tile_id';

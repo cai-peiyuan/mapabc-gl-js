@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>Mapbox GL JS debug page</title>
-    <meta http-equiv="Content-Security-Policy" content="worker-src blob: ; img-src data: blob: ; script-src http: 'nonce-dummy'; connect-src https://*.tiles.mapbox.com https://api.mapbox.com">
+    <meta http-equiv="Content-Security-Policy" content="worker-src blob: ; img-src data: blob: ; script-src http: 'nonce-dummy'; connect-src https://*.tiles.mapabc.com https://api.mapabc.com">
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel='stylesheet' href='/dist/mapbox-gl.css' />
+    <link rel='stylesheet' href='/dist/mapabc-gl.css' />
     <style>
         body { margin: 0; padding: 0; }
         html, body, #map { height: 100%; }
@@ -15,7 +15,7 @@
 <body>
 <div id='map'></div>
 
-<script src='/dist/mapbox-gl-dev.js'></script>
+<script src='/dist/mapabc-gl-dev.js'></script>
 <script src='/debug/access_token_generated.js'></script>
 <script nonce="dummy">
 
@@ -23,11 +23,11 @@ var map = window.map = new mapabcgl.Map({
     container: 'map',
     zoom: 12.5,
     center: [-77.01866, 38.888],
-    style: 'mapbox://styles/mapbox/streets-v10',
+    style: 'mapabc://styles/mapabc/streets-v10',
     hash: true
 });
 
-mapabcgl.setRTLTextPlugin('https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.1.2/mapbox-gl-rtl-text.js');
+mapabcgl.setRTLTextPlugin('https://api.mapabc.com/mapabc-gl-js/plugins/mapabc-gl-rtl-text/v0.1.2/mapabc-gl-rtl-text.js');
 
 </script>
 </body>

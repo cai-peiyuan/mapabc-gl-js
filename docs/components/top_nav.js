@@ -1,5 +1,5 @@
 import React from 'react';
-import {prefixUrl} from '@mapbox/batfish/modules/prefix-url';
+import {prefixUrl} from '@mapabc/batfish/modules/prefix-url';
 
 export default class extends React.Component {
     render() {

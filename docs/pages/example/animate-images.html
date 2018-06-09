@@ -2,7 +2,7 @@
 <script>
 var map = new mapabcgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/dark-v9',
+    style: 'mapabc://styles/mapabc/dark-v9',
     maxZoom: 5.99,
     minZoom: 4,
     zoom: 5,
@@ -18,7 +18,7 @@ map.on('load', function() {
             id: 'radar' + i,
             source: {
                 type: 'image',
-                url: '/mapbox-gl-js/assets/radar' + i + '.gif',
+                url: '/mapabc-gl-js/assets/radar' + i + '.gif',
                 coordinates: [
                     [-80.425, 46.437],
                     [-71.516, 46.437],

@@ -8,7 +8,7 @@ import { Event } from '../../util/evented';
 import assert from 'assert';
 
 import type Map from '../map';
-import type Point from '@mapbox/point-geometry';
+import type Point from '@mapabc/point-geometry';
 import type {TaskID} from '../../util/task_queue';
 
 const inertiaLinearity = 0.3,

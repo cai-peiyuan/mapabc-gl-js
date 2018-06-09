@@ -1,7 +1,7 @@
 
 import validateStyleMin from './validate_style.min';
 import ParsingError from './error/parsing_error';
-import jsonlint from '@mapbox/jsonlint-lines-primitives';
+import jsonlint from '@mapabc/jsonlint-lines-primitives';
 import {v8} from './style-spec';
 
 /**
@@ -15,7 +15,7 @@ import {v8} from './style-spec';
  *     If omitted, the spec version is inferred from the stylesheet.
  * @returns {Array<ValidationError|ParsingError>}
  * @example
- *   var validate = require('mapbox-gl-style-spec').validate;
+ *   var validate = require('mapabc-gl-style-spec').validate;
  *   var style = fs.readFileSync('./style.json', 'utf8');
  *   var errors = validate(style);
  */

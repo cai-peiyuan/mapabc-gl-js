@@ -1,8 +1,8 @@
 // @flow
 
-import Point from '@mapbox/point-geometry';
+import Point from '@mapabc/point-geometry';
 
-import mvt from '@mapbox/vector-tile';
+import mvt from '@mapabc/vector-tile';
 const toGeoJSON = mvt.VectorTileFeature.prototype.toGeoJSON;
 import EXTENT from '../data/extent';
 

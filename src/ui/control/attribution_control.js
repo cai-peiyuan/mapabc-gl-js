@@ -11,7 +11,7 @@ type Options = {
 };
 
 /**
- * An `AttributionControl` control presents the map's [attribution information](https://www.mapbox.com/help/attribution/).
+ * An `AttributionControl` control presents the map's [attribution information](https://www.mapabc.com/help/attribution/).
  *
  * @implements {IControl}
  * @param {Object} [options]
@@ -81,7 +81,7 @@ class AttributionControl {
     _updateEditLink() {
         let editLink = this._editLink;
         if (!editLink) {
-            editLink = this._editLink = (this._container.querySelector('.mapbox-improve-map'): any);
+            editLink = this._editLink = (this._container.querySelector('.mapabc-improve-map'): any);
         }
 
         const params = [
@@ -97,7 +97,7 @@ class AttributionControl {
                 }
                 return acc;
             }, `?`);
-            editLink.href = `https://www.mapbox.com/feedback/${paramString}${this._map._hash ? this._map._hash.getHashString(true) : ''}`;
+            editLink.href = `https://www.mapabc.com/feedback/${paramString}${this._map._hash ? this._map._hash.getHashString(true) : ''}`;
         }
     }
 

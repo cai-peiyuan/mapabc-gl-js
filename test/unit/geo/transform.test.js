@@ -1,9 +1,9 @@
-import { test } from 'mapbox-gl-js-test';
-import Point from '@mapbox/point-geometry';
+import { test } from 'mapabc-gl-js-test';
+import Point from '@mapabc/point-geometry';
 import Transform from '../../../src/geo/transform';
 import LngLat from '../../../src/geo/lng_lat';
 import { OverscaledTileID, CanonicalTileID } from '../../../src/source/tile_id';
-import fixed from 'mapbox-gl-js-test/fixed';
+import fixed from 'mapabc-gl-js-test/fixed';
 const fixedLngLat = fixed.LngLat;
 const fixedCoord = fixed.Coord;
 

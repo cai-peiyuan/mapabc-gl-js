@@ -9,7 +9,7 @@
   ],
   "zoom": 0,
   "sources": {
-    "mapbox": {
+    "mapabc": {
       "type": "vector",
       "maxzoom": 14,
       "tiles": [
@@ -26,9 +26,9 @@
       }
     },
     {
-      "id": "mapbox",
+      "id": "mapabc",
       "type": "circle",
-      "source": "mapbox",
+      "source": "mapabc",
       "source-layer": "poi_label",
       "paint": {
         "circle-color": "black",

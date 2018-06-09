@@ -1,6 +1,6 @@
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 import mergeLines from '../../../src/symbol/mergelines';
-import Point from '@mapbox/point-geometry';
+import Point from '@mapabc/point-geometry';
 
 function makeFeatures(lines) {
     const features = [];

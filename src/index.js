@@ -1,7 +1,7 @@
 // @flow
 
 import assert from 'assert';
-import supported from '@mapbox/mapbox-gl-supported';
+import supported from '@mapabc/mapabc-gl-supported';
 
 import browser from './util/browser';
 import { version } from '../package.json';
@@ -16,7 +16,7 @@ import Marker from './ui/marker';
 import Style from './style/style';
 import LngLat from './geo/lng_lat';
 import LngLatBounds from './geo/lng_lat_bounds';
-import Point from '@mapbox/point-geometry';
+import Point from '@mapabc/point-geometry';
 import {Evented} from './util/evented';
 import config from './util/config';
 import {setRTLTextPlugin} from './source/rtl_text_plugin';
@@ -42,12 +42,12 @@ const exported = {
     config,
 
     /**
-     * Gets and sets the map's [access token](https://www.mapbox.com/help/define-access-token/).
+     * Gets and sets the map's [access token](https://www.mapabc.com/help/define-access-token/).
      *
      * @var {string} accessToken
      * @example
      * mapabcgl.accessToken = myAccessToken;
-     * @see [Display a map](https://www.mapbox.com/mapbox-gl-js/examples/)
+     * @see [Display a map](https://www.mapabc.com/mapabc-gl-js/examples/)
      */
     get accessToken() {
         return config.ACCESS_TOKEN;
@@ -68,7 +68,7 @@ const exported = {
  */
 
 /**
- * Test whether the browser [supports Mapbox GL JS](https://www.mapbox.com/help/mapbox-browser-support/#mapbox-gl-js).
+ * Test whether the browser [supports Mapbox GL JS](https://www.mapabc.com/help/mapabc-browser-support/#mapabc-gl-js).
  *
  * @function supported
  * @param {Object} [options]
@@ -78,19 +78,19 @@ const exported = {
  * @return {boolean}
  * @example
  * mapabcgl.supported() // = true
- * @see [Check for browser support](https://www.mapbox.com/mapbox-gl-js/example/check-for-support/)
+ * @see [Check for browser support](https://www.mapabc.com/mapabc-gl-js/example/check-for-support/)
  */
 
 /**
- * Sets the map's [RTL text plugin](https://www.mapbox.com/mapbox-gl-js/plugins/#mapbox-gl-rtl-text).
+ * Sets the map's [RTL text plugin](https://www.mapabc.com/mapabc-gl-js/plugins/#mapabc-gl-rtl-text).
  * Necessary for supporting languages like Arabic and Hebrew that are written right-to-left.
  *
  * @function setRTLTextPlugin
  * @param {string} pluginURL URL pointing to the Mapbox RTL text plugin source.
  * @param {Function} callback Called with an error argument if there is an error.
  * @example
- * mapabcgl.setRTLTextPlugin('https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.1.2/mapbox-gl-rtl-text.js');
- * @see [Add support for right-to-left scripts](https://www.mapbox.com/mapbox-gl-js/example/mapbox-gl-rtl-text/)
+ * mapabcgl.setRTLTextPlugin('https://api.mapabc.com/mapabc-gl-js/plugins/mapabc-gl-rtl-text/v0.1.2/mapabc-gl-rtl-text.js');
+ * @see [Add support for right-to-left scripts](https://www.mapabc.com/mapabc-gl-js/example/mapabc-gl-rtl-text/)
  */
 
 export default exported;

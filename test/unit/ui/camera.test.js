@@ -1,9 +1,9 @@
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 import Camera from '../../../src/ui/camera';
 import Transform from '../../../src/geo/transform';
 import TaskQueue from '../../../src/util/task_queue';
 import browser from '../../../src/util/browser';
-import fixed from 'mapbox-gl-js-test/fixed';
+import fixed from 'mapabc-gl-js-test/fixed';
 const fixedLngLat = fixed.LngLat;
 const fixedNum = fixed.Num;
 

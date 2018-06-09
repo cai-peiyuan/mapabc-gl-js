@@ -1,6 +1,6 @@
 // @flow
 
-import ShelfPack from '@mapbox/shelf-pack';
+import ShelfPack from '@mapabc/shelf-pack';
 
 import { RGBAImage } from '../util/image';
 import { register } from '../util/web_worker_transfer';

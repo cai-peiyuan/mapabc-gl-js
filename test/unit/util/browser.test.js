@@ -1,4 +1,4 @@
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 import browser from '../../../src/util/browser';
 
 test('browser', (t) => {

@@ -1,4 +1,4 @@
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 import assert from 'assert';
 import Style from '../../../src/style/style';
 import SourceCache from '../../../src/source/source_cache';
@@ -147,7 +147,7 @@ test('Style#loadURL', (t) => {
         window.server.respond();
     });
 
-    t.test('skips validation for mapbox:// styles', (t) => {
+    t.test('skips validation for mapabc:// styles', (t) => {
         const style = new Style(new StubMap())
             .on('error', () => {
                 t.fail();
@@ -156,7 +156,7 @@ test('Style#loadURL', (t) => {
                 t.end();
             });
 
-        style.loadURL('mapbox://styles/test/test', {accessToken: 'none'});
+        style.loadURL('mapabc://styles/test/test', {accessToken: 'none'});
 
         window.server.respondWith(JSON.stringify(createStyleJSON({version: 'invalid'})));
         window.server.respond();
@@ -271,13 +271,13 @@ test('Style#loadJSON', (t) => {
         const style = new Style(new StubMap());
 
         style.on('style.load', () => {
-            t.ok(style.sourceCaches['mapbox'] instanceof SourceCache);
+            t.ok(style.sourceCaches['mapabc'] instanceof SourceCache);
             t.end();
         });
 
         style.loadJSON(extend(createStyleJSON(), {
             "sources": {
-                "mapbox": {
+                "mapabc": {
                     "type": "vector",
                     "tiles": []
                 }
@@ -376,12 +376,12 @@ test('Style#loadJSON', (t) => {
 
         style.on('error', (e) => {
             t.deepEqual(e.layer, {id: 'background'});
-            t.ok(e.mapbox);
+            t.ok(e.mapabc);
             t.end();
         });
 
         style.on('style.load', () => {
-            style._layers.background.fire(new Event('error', {mapbox: true}));
+            style._layers.background.fire(new Event('error', {mapabc: true}));
         });
     });
 
@@ -719,12 +719,12 @@ test('Style#removeSource', (t) => {
         const style = new Style(new StubMap());
         style.loadJSON(createStyleJSON({
             'sources': {
-                'mapbox-source': createGeoJSONSource()
+                'mapabc-source': createGeoJSONSource()
             },
             'layers': [{
-                'id': 'mapbox-layer',
+                'id': 'mapabc-layer',
                 'type': 'circle',
-                'source': 'mapbox-source',
+                'source': 'mapabc-source',
                 'source-layer': 'whatever'
             }]
         }));
@@ -738,11 +738,11 @@ test('Style#removeSource', (t) => {
     t.test('throws if source is in use', (t) => {
         createStyle((style) => {
             style.on('error', (event) => {
-                t.ok(event.error.message.includes('"mapbox-source"'));
-                t.ok(event.error.message.includes('"mapbox-layer"'));
+                t.ok(event.error.message.includes('"mapabc-source"'));
+                t.ok(event.error.message.includes('"mapabc-layer"'));
                 t.end();
             });
-            style.removeSource('mapbox-source');
+            style.removeSource('mapabc-source');
         });
     });
 
@@ -751,8 +751,8 @@ test('Style#removeSource', (t) => {
             style.on('error', () => {
                 t.fail();
             });
-            style.removeLayer('mapbox-layer');
-            style.removeSource('mapbox-source');
+            style.removeLayer('mapabc-layer');
+            style.removeSource('mapabc-source');
             t.end();
         });
     });
@@ -817,7 +817,7 @@ test('Style#addLayer', (t) => {
 
         style.on('error', (e) => {
             t.deepEqual(e.layer, {id: 'background'});
-            t.ok(e.mapbox);
+            t.ok(e.mapabc);
             t.end();
         });
 
@@ -826,7 +826,7 @@ test('Style#addLayer', (t) => {
                 id: 'background',
                 type: 'background'
             });
-            style._layers.background.fire(new Event('error', {mapbox: true}));
+            style._layers.background.fire(new Event('error', {mapabc: true}));
         });
     });
 
@@ -903,7 +903,7 @@ test('Style#addLayer', (t) => {
         const style = new Style(new StubMap());
         style.loadJSON(extend(createStyleJSON(), {
             "sources": {
-                "mapbox": {
+                "mapabc": {
                     "type": "vector",
                     "tiles": []
                 }
@@ -912,14 +912,14 @@ test('Style#addLayer', (t) => {
         const layer = {
             "id": "symbol",
             "type": "symbol",
-            "source": "mapbox",
+            "source": "mapabc",
             "source-layer": "boxmap",
             "filter": ["==", "id", 0]
         };
 
         style.on('data', (e) => {
             if (e.dataType === 'source' && e.sourceDataType === 'content') {
-                style.sourceCaches['mapbox'].reload = t.end;
+                style.sourceCaches['mapabc'].reload = t.end;
                 style.addLayer(layer);
                 style.update({});
             }
@@ -930,7 +930,7 @@ test('Style#addLayer', (t) => {
         const style = new Style(new StubMap());
         style.loadJSON(extend(createStyleJSON(), {
             "sources": {
-                "mapbox": {
+                "mapabc": {
                     "type": "vector",
                     "tiles": []
                 }
@@ -938,7 +938,7 @@ test('Style#addLayer', (t) => {
             layers: [{
                 "id": "my-layer",
                 "type": "symbol",
-                "source": "mapbox",
+                "source": "mapabc",
                 "source-layer": "boxmap",
                 "filter": ["==", "id", 0]
             }]
@@ -947,14 +947,14 @@ test('Style#addLayer', (t) => {
         const layer = {
             "id": "my-layer",
             "type": "symbol",
-            "source": "mapbox",
+            "source": "mapabc",
             "source-layer": "boxmap"
         };
 
         style.on('data', (e) => {
             if (e.dataType === 'source' && e.sourceDataType === 'content') {
-                style.sourceCaches['mapbox'].reload = t.end;
-                style.sourceCaches['mapbox'].clearTiles = t.fail;
+                style.sourceCaches['mapabc'].reload = t.end;
+                style.sourceCaches['mapabc'].clearTiles = t.fail;
                 style.removeLayer('my-layer');
                 style.addLayer(layer);
                 style.update({});
@@ -967,7 +967,7 @@ test('Style#addLayer', (t) => {
         const style = new Style(new StubMap());
         style.loadJSON(extend(createStyleJSON(), {
             "sources": {
-                "mapbox": {
+                "mapabc": {
                     "type": "vector",
                     "tiles": []
                 }
@@ -975,7 +975,7 @@ test('Style#addLayer', (t) => {
             layers: [{
                 "id": "my-layer",
                 "type": "symbol",
-                "source": "mapbox",
+                "source": "mapabc",
                 "source-layer": "boxmap",
                 "filter": ["==", "id", 0]
             }]
@@ -984,13 +984,13 @@ test('Style#addLayer', (t) => {
         const layer = {
             "id": "my-layer",
             "type": "circle",
-            "source": "mapbox",
+            "source": "mapabc",
             "source-layer": "boxmap"
         };
         style.on('data', (e) => {
             if (e.dataType === 'source' && e.sourceDataType === 'content') {
-                style.sourceCaches['mapbox'].reload = t.fail;
-                style.sourceCaches['mapbox'].clearTiles = t.end;
+                style.sourceCaches['mapabc'].reload = t.fail;
+                style.sourceCaches['mapabc'].clearTiles = t.end;
                 style.removeLayer('my-layer');
                 style.addLayer(layer);
                 style.update({});
@@ -1162,7 +1162,7 @@ test('Style#removeLayer', (t) => {
             // Bind a listener to prevent fallback Evented error reporting.
             layer.on('error', () => {});
 
-            layer.fire(new Event('error', {mapbox: true}));
+            layer.fire(new Event('error', {mapabc: true}));
             t.end();
         });
     });
@@ -1708,7 +1708,7 @@ test('Style#queryRenderedFeatures', (t) => {
     style.loadJSON({
         "version": 8,
         "sources": {
-            "mapbox": {
+            "mapabc": {
                 "type": "geojson",
                 "data": { type: "FeatureCollection", features: [] }
             },
@@ -1720,7 +1720,7 @@ test('Style#queryRenderedFeatures', (t) => {
         "layers": [{
             "id": "land",
             "type": "line",
-            "source": "mapbox",
+            "source": "mapabc",
             "source-layer": "water",
             "layout": {
                 'line-cap': 'round'
@@ -1755,7 +1755,7 @@ test('Style#queryRenderedFeatures', (t) => {
     });
 
     style.on('style.load', () => {
-        style.sourceCaches.mapbox.tilesIn = () => {
+        style.sourceCaches.mapabc.tilesIn = () => {
             return [{
                 tile: { queryRenderedFeatures: queryMapboxFeatures },
                 tileID: new OverscaledTileID(0, 0, 0, 0, 0),
@@ -1767,7 +1767,7 @@ test('Style#queryRenderedFeatures', (t) => {
             return [];
         };
 
-        style.sourceCaches.mapbox.transform = transform;
+        style.sourceCaches.mapabc.transform = transform;
         style.sourceCaches.other.transform = transform;
 
         style.update(new EvaluationParameters(0));
@@ -1824,7 +1824,7 @@ test('Style#queryRenderedFeatures', (t) => {
         });
 
         t.test('does not query sources not implicated by `layers` parameter', (t) => {
-            style.sourceCaches.mapbox.queryRenderedFeatures = function() { t.fail(); };
+            style.sourceCaches.mapabc.queryRenderedFeatures = function() { t.fail(); };
             style.queryRenderedFeatures([{column: 1, row: 1, zoom: 1}], {layers: ['land--other']}, transform);
             t.end();
         });

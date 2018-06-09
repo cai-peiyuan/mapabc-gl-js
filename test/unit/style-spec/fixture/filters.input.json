@@ -3,7 +3,7 @@
   "sources": {
     "source": {
       "type": "vector",
-      "url": "mapbox://mapbox.mapbox-streets-v5"
+      "url": "mapabc://mapabc.mapabc-streets-v5"
     }
   },
   "layers": [
@@ -110,7 +110,7 @@
       "source-layer": "source-layer",
       "filter": [
         "has",
-        "mapbox"
+        "mapabc"
       ]
     },
     {
@@ -120,7 +120,7 @@
       "source-layer": "source-layer",
       "filter": [
         "!has",
-        "mapbox"
+        "mapabc"
       ]
     },
     {
@@ -130,7 +130,7 @@
       "source-layer": "source-layer",
       "filter": [
         "has",
-        "mapbox",
+        "mapabc",
         "bad"
       ]
     },
@@ -141,7 +141,7 @@
       "source-layer": "source-layer",
       "filter": [
         "has",
-        {"mapbox": true}
+        {"mapabc": true}
       ]
     },
     {

@@ -1,4 +1,4 @@
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 import config from '../../../../src/util/config';
 import AttributionControl from '../../../../src/ui/control/attribution_control';
 import { createMap as globalCreateMap } from '../../../util';
@@ -12,7 +12,7 @@ function createMap(t) {
             version: 8,
             sources: {},
             layers: [],
-            owner: 'mapbox',
+            owner: 'mapabc',
             id: 'streets-v10',
         },
         hash: true
@@ -107,12 +107,12 @@ test('AttributionControl has the correct edit map link', (t) => {
     const attribution = new AttributionControl();
     map.addControl(attribution);
     map.on('load', () => {
-        map.addSource('1', {type: 'vector', attribution: '<a class="mapbox-improve-map" href="https://www.mapbox.com/feedback/" target="_blank">Improve this map</a>'});
+        map.addSource('1', {type: 'vector', attribution: '<a class="mapabc-improve-map" href="https://www.mapabc.com/feedback/" target="_blank">Improve this map</a>'});
         map.on('data', (e) => {
             if (e.dataType === 'source' && e.sourceDataType === 'metadata') {
-                t.equal(attribution._editLink.href, 'https://www.mapbox.com/feedback/?owner=mapbox&id=streets-v10&access_token=pk.123#/0/0/0', 'edit link contains map location data');
+                t.equal(attribution._editLink.href, 'https://www.mapabc.com/feedback/?owner=mapabc&id=streets-v10&access_token=pk.123#/0/0/0', 'edit link contains map location data');
                 map.setZoom(2);
-                t.equal(attribution._editLink.href, 'https://www.mapbox.com/feedback/?owner=mapbox&id=streets-v10&access_token=pk.123#/0/0/2', 'edit link updates on mapmove');
+                t.equal(attribution._editLink.href, 'https://www.mapabc.com/feedback/?owner=mapabc&id=streets-v10&access_token=pk.123#/0/0/2', 'edit link updates on mapmove');
                 t.end();
             }
         });

@@ -58,7 +58,7 @@ function loadGeoJSONTile(params: WorkerTileParameters, callback: LoadVectorDataC
     // across `VectorTileSource` and `GeoJSONSource` data.
     let pbf = vtpbf(geojsonWrapper);
     if (pbf.byteOffset !== 0 || pbf.byteLength !== pbf.buffer.byteLength) {
-        // Compatibility with node Buffer (https://github.com/mapbox/pbf/issues/35)
+        // Compatibility with node Buffer (https://github.com/mapabc/pbf/issues/35)
         pbf = new Uint8Array(pbf);
     }
 
@@ -79,7 +79,7 @@ export type SourceState =
  * for data formats that can be parsed/converted into an in-memory GeoJSON
  * representation.  To do so, create it with
  * `new GeoJSONWorkerSource(actor, layerIndex, customLoadGeoJSONFunction)`.
- * For a full example, see [mapbox-gl-topojson](https://github.com/developmentseed/mapbox-gl-topojson).
+ * For a full example, see [mapabc-gl-topojson](https://github.com/developmentseed/mapabc-gl-topojson).
  *
  * @private
  */

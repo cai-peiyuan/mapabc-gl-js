@@ -2,7 +2,7 @@
 <script>
 var map = new mapabcgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/cjaudgl840gn32rnrepcb9b9g', // the outdoors-v10 style but without Hillshade layers
+    style: 'mapabc://styles/mapabc/cjaudgl840gn32rnrepcb9b9g', // the outdoors-v10 style but without Hillshade layers
     center: [-119.5591, 37.715],
     zoom: 9
 });
@@ -10,7 +10,7 @@ var map = new mapabcgl.Map({
 map.on('load', function () {
     map.addSource('dem', {
         "type": "raster-dem",
-        "url": "mapbox://mapbox.terrain-rgb"
+        "url": "mapabc://mapabc.terrain-rgb"
     });
     map.addLayer({
         "id": "hillshading",

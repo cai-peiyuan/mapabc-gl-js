@@ -4,7 +4,7 @@ import { pick } from '../util/util';
 
 import { getJSON, ResourceType } from '../util/ajax';
 import browser from '../util/browser';
-import { normalizeSourceURL as normalizeURL } from '../util/mapbox';
+import { normalizeSourceURL as normalizeURL } from '../util/mapabc';
 
 import type {RequestTransformFunction} from '../ui/map';
 import type {Callback} from '../types/callback';
@@ -17,7 +17,7 @@ export default function(options: any, requestTransformFn: RequestTransformFuncti
         } else if (tileJSON) {
             const result: any = pick(
                 tileJSON,
-                ['tiles', 'minzoom', 'maxzoom', 'attribution', 'mapbox_logo', 'bounds']
+                ['tiles', 'minzoom', 'maxzoom', 'attribution', 'mapabc_logo', 'bounds']
             );
 
             if (tileJSON.vector_layers) {

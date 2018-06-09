@@ -1,4 +1,4 @@
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 import VectorTileSource from '../../../src/source/vector_tile_source';
 import { OverscaledTileID } from '../../../src/source/tile_id';
 import window from '../../../src/util/window';

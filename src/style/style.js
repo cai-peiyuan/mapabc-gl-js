@@ -12,7 +12,7 @@ import Light from './light';
 import LineAtlas from '../render/line_atlas';
 import { pick, clone, extend, deepEqual, filterObject, mapObject } from '../util/util';
 import { getJSON, ResourceType } from '../util/ajax';
-import { isMapboxURL, normalizeStyleURL } from '../util/mapbox';
+import { isMapboxURL, normalizeStyleURL } from '../util/mapabc';
 import browser from '../util/browser';
 import Dispatcher from '../util/dispatcher';
 import { validateStyle, emitValidationErrors as _emitValidationErrors } from './validate_style';
@@ -38,7 +38,7 @@ import CrossTileSymbolIndex from '../symbol/cross_tile_symbol_index';
 
 // We're skipping validation errors with the `source.canvas` identifier in order
 // to continue to allow canvas sources to be added at runtime/updated in
-// smart setStyle (see https://github.com/mapbox/mapbox-gl-js/pull/6424):
+// smart setStyle (see https://github.com/mapabc/mapabc-gl-js/pull/6424):
 const emitValidationErrors = (evented: Evented, errors: ?$ReadOnlyArray<{message: string, identifier?: string}>) =>
     _emitValidationErrors(evented, errors && errors.filter(error => error.identifier !== 'source.canvas'));
 
@@ -386,7 +386,7 @@ class Style extends Evented {
      * Update this style's state to match the given style JSON, performing only
      * the necessary mutations.
      *
-     * May throw an Error ('Unimplemented: METHOD') if the mapbox-gl-style-spec
+     * May throw an Error ('Unimplemented: METHOD') if the mapabc-gl-style-spec
      * diff algorithm produces an operation that is not supported.
      *
      * @returns {boolean} true if any changes were made; false otherwise
@@ -582,7 +582,7 @@ class Style extends Evented {
             // tiles.  Otherwise, tiles marked 'reloading' will have buckets /
             // buffers that are set up for the _previous_ version of this
             // layer, causing, e.g.:
-            // https://github.com/mapbox/mapbox-gl-js/issues/3633
+            // https://github.com/mapabc/mapabc-gl-js/issues/3633
             const removed = this._removedLayers[id];
             delete this._removedLayers[id];
             if (removed.type !== layer.type) {

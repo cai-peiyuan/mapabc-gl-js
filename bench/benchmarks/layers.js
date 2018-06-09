@@ -149,7 +149,7 @@ class LayerHillshade extends LayerBenchmark {
             sources: {
                 'terrain-rgb': {
                     'type': 'raster-dem',
-                    'url': 'mapbox://mapbox.terrain-rgb'
+                    'url': 'mapabc://mapabc.terrain-rgb'
                 }
             },
             layers: generateLayers({
@@ -183,7 +183,7 @@ class LayerRaster extends LayerBenchmark {
         this.layerStyle = Object.assign({}, style, {
             sources: {
                 'satellite': {
-                    'url': 'mapbox://mapbox.satellite',
+                    'url': 'mapabc://mapabc.satellite',
                     'type': 'raster',
                     'tileSize': 256
                 }

@@ -118,10 +118,10 @@ export default class extends React.Component {
                                                     <div className="space-top">
                                                         {item.issues && item.issues.map((issue, i) =>
                                                             <code key={i}><a target="_blank" className="roadmap-issue"
-                                                                href={`https://github.com/mapbox/mapbox-gl-js/issues/${issue}`}>#{issue}</a></code>)}
+                                                                href={`https://github.com/mapabc/mapabc-gl-js/issues/${issue}`}>#{issue}</a></code>)}
                                                         {item.project &&
                                                         <code><a target="_blank"
-                                                            href={`https://github.com/mapbox/mapbox-gl-js/projects/${item.project}`}>project#{item.project}</a></code>}
+                                                            href={`https://github.com/mapabc/mapabc-gl-js/projects/${item.project}`}>project#{item.project}</a></code>}
                                                     </div>
                                                 </div>
                                             )}

@@ -1,4 +1,4 @@
-import { test as t } from 'mapbox-gl-js-test';
+import { test as t } from 'mapabc-gl-js-test';
 import diffStyles from '../../../src/style-spec/diff';
 
 t('diff', (t) => {
@@ -217,13 +217,13 @@ t('diff', (t) => {
     ], 'remove and re-add a source if cluster radius changes (before and after swapped)');
 
     t.deepEqual(diffStyles({}, {
-        metadata: { 'mapbox:author': 'nobody' }
+        metadata: { 'mapabc:author': 'nobody' }
     }), [], 'ignore style metadata');
 
     t.deepEqual(diffStyles({
-        layers: [{ id: 'a', metadata: { 'mapbox:group': 'Group Name' } }]
+        layers: [{ id: 'a', metadata: { 'mapabc:group': 'Group Name' } }]
     }, {
-        layers: [{ id: 'a', metadata: { 'mapbox:group': 'Another Name' } }]
+        layers: [{ id: 'a', metadata: { 'mapabc:group': 'Another Name' } }]
     }), [], 'ignore layer metadata');
 
     t.deepEqual(diffStyles({

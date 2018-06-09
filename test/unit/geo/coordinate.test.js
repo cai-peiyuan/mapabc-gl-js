@@ -1,4 +1,4 @@
-import { test } from 'mapbox-gl-js-test';
+import { test } from 'mapabc-gl-js-test';
 import Coordinate from '../../../src/geo/coordinate';
 
 test('Coordinate', (t) => {

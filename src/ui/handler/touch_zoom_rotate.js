@@ -7,7 +7,7 @@ import browser from '../../util/browser';
 import { Event } from '../../util/evented';
 
 import type Map from '../map';
-import type Point from '@mapbox/point-geometry';
+import type Point from '@mapabc/point-geometry';
 import type {TaskID} from '../../util/task_queue';
 
 const inertiaLinearity = 0.15,

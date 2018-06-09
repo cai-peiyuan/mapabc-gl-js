@@ -8,7 +8,7 @@ import type Map from '../map';
 
 /**
  * A `LogoControl` is a control that adds the Mapbox watermark
- * to the map as required by the [terms of service](https://www.mapbox.com/tos/) for Mapbox
+ * to the map as required by the [terms of service](https://www.mapabc.com/tos/) for Mapbox
  * vector tiles and core styles.
  *
  * @implements {IControl}
@@ -29,7 +29,7 @@ class LogoControl {
         this._container = DOM.create('div', 'mapabcgl-ctrl');
         const anchor = DOM.create('a', 'mapabcgl-ctrl-logo');
         anchor.target = "_blank";
-        anchor.href = "https://www.mapbox.com/";
+        anchor.href = "https://www.mapabc.com/";
         anchor.setAttribute("aria-label", "Mapbox logo");
         anchor.setAttribute("rel", "noopener");
         this._container.appendChild(anchor);
@@ -66,7 +66,7 @@ class LogoControl {
         const sourceCaches = this._map.style.sourceCaches;
         for (const id in sourceCaches) {
             const source = sourceCaches[id].getSource();
-            if (source.mapbox_logo) {
+            if (source.mapabc_logo) {
                 return true;
             }
         }

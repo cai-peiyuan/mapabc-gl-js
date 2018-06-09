@@ -660,7 +660,7 @@ var navigationMenuData = {
         }, {
           name: 'Studio',
           description: 'Design custom maps',
-          to: '/mapbox-studio/'
+          to: '/mapabc-studio/'
         }],
         more: {
           title: 'View all products',
@@ -705,7 +705,7 @@ var navigationMenuData = {
         }],
         more: {
           title: 'Built with Mapbox blog',
-          to: 'https://blog.mapbox.com/tagged/built-with-mapbox/'
+          to: 'https://blog.mapabc.com/tagged/built-with-mapabc/'
         }
       }
     },
@@ -718,7 +718,7 @@ var navigationMenuData = {
             icon: SmallMapsIcon,
             links: [{
               name: 'Mapbox GL JS',
-              to: '/mapbox-gl-js/api/'
+              to: '/mapabc-gl-js/api/'
             }],
             subsections: {
               mapsSdks: {
@@ -756,7 +756,7 @@ var navigationMenuData = {
                 links: [{
                   name: 'iOS',
                   showFor: true,
-                  to: '/mapbox-navigation-ios/'
+                  to: '/mapabc-navigation-ios/'
                 }, {
                   name: 'Android',
                   showFor: true,
@@ -798,7 +798,7 @@ var navigationMenuData = {
         links: [{
           name: 'How Mapbox works',
           subTitle: 'Learn how the Mapbox platform works',
-          to: '/help/how-mapbox-works/'
+          to: '/help/how-mapabc-works/'
         }, {
           name: 'Tutorials',
           subTitle: 'Start with a guide or explore project ideas',
@@ -837,7 +837,7 @@ var navigationMenuData = {
       to: '/navigation/'
     }, {
       name: 'Studio',
-      to: '/mapbox-studio/'
+      to: '/mapabc-studio/'
     }],
     highlightedLinks: [{
       name: 'Pricing',
@@ -2253,7 +2253,7 @@ var FooterSocialMediaStrip = function (_React$Component) {
           {
             'aria-label': 'Github',
             className: 'shell-color-blue shell-color-gray-dark-on-hover',
-            href: 'https://github.com/mapbox'
+            href: 'https://github.com/mapabc'
           },
           React__default.createElement(
             'svg',
@@ -2269,7 +2269,7 @@ var FooterSocialMediaStrip = function (_React$Component) {
           {
             'aria-label': 'Twitter',
             className: 'shell-color-blue shell-color-gray-dark-on-hover ',
-            href: 'https://twitter.com/mapbox/'
+            href: 'https://twitter.com/mapabc/'
           },
           React__default.createElement(
             'svg',
@@ -2289,7 +2289,7 @@ var FooterSocialMediaStrip = function (_React$Component) {
           {
             'aria-label': 'LinkedIn',
             className: 'shell-color-blue shell-color-gray-dark-on-hover',
-            href: 'https://www.linkedin.com/company/mapbox'
+            href: 'https://www.linkedin.com/company/mapabc'
           },
           React__default.createElement(
             'svg',
@@ -2335,7 +2335,7 @@ var FooterSocialMediaStrip = function (_React$Component) {
           {
             'aria-label': 'Dribbble',
             className: 'shell-color-blue shell-color-gray-dark-on-hover',
-            href: 'https://dribbble.com/mapbox'
+            href: 'https://dribbble.com/mapabc'
           },
           React__default.createElement(
             'svg',
@@ -2558,8 +2558,8 @@ var PageFooter = function (_Component) {
   return PageFooter;
 }(React.Component);
 
-var DEFAULT_SOCIAL_IMAGE_URL = 'https://www.mapbox.com/social-1200x630.png';
-var DEFAULT_SOCIAL_IMAGE_THUMBNAIL_URL = 'https://www.mapbox.com/social-120x120.png';
+var DEFAULT_SOCIAL_IMAGE_URL = 'https://www.mapabc.com/social-1200x630.png';
+var DEFAULT_SOCIAL_IMAGE_THUMBNAIL_URL = 'https://www.mapabc.com/social-120x120.png';
 
 var MetaTagger = function (_React$PureComponent) {
   inherits(MetaTagger, _React$PureComponent);
@@ -2576,7 +2576,7 @@ var MetaTagger = function (_React$PureComponent) {
 
       var suffixedTitle = /^Mapbox/.test(props.title) ? props.title : props.title + ' | Mapbox';
       var preppedDescription = props.description.replace(/\s+/g, ' ');
-      var prodUrl = 'https://www.mapbox.com';
+      var prodUrl = 'https://www.mapabc.com';
       if (props.pathname[0] !== '/') prodUrl += '/';
       prodUrl += props.pathname;
 

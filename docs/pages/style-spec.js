@@ -404,7 +404,7 @@ export default class extends React.Component {
                 .doc.dark .keyline-bottom { border-color: rgba(0,0,0,0.15); }
 
                 /* Supress \`err\` styling rouge applies from
-                 * mapbox.com/base/ to favor shorthand documentation
+                 * mapabc.com/base/ to favor shorthand documentation
                  * that doesn't always support formal syntax */
                 pre .err {
                   background-color:transparent;
@@ -437,14 +437,14 @@ export default class extends React.Component {
                             <p>The intended audience of this specification includes:</p>
                             <ul>
                                 <li>Advanced designers and cartographers who want to write styles by hand rather
-                                    than use <a href='https://www.mapbox.com/studio'>Mapbox Studio</a></li>
+                                    than use <a href='https://www.mapabc.com/studio'>Mapbox Studio</a></li>
                                 <li>Developers using style-related features of <a
-                                    href='https://www.mapbox.com/mapbox-gl-js/'>Mapbox GL JS</a> or the <a
-                                    href='https://www.mapbox.com/android-sdk/'>Mapbox Maps SDK for Android</a></li>
+                                    href='https://www.mapabc.com/mapabc-gl-js/'>Mapbox GL JS</a> or the <a
+                                    href='https://www.mapabc.com/android-sdk/'>Mapbox Maps SDK for Android</a></li>
                                 <li>Authors of software that generates or processes Mapbox styles.</li>
                             </ul>
-                            <p>Developers using the <a href='https://www.mapbox.com/ios-sdk/'>Mapbox Maps SDK for iOS</a> or <a
-                                href='https://github.com/mapbox/mapbox-gl-native/tree/master/platform/macos/'>
+                            <p>Developers using the <a href='https://www.mapabc.com/ios-sdk/'>Mapbox Maps SDK for iOS</a> or <a
+                                href='https://github.com/mapabc/mapabc-gl-native/tree/master/platform/macos/'>
                                 Mapbox Maps SDK for macOS</a> should consult the iOS SDK API reference for platform-appropriate
                                 documentation of style-related features.</p>
                         </div>
@@ -460,8 +460,8 @@ export default class extends React.Component {
                                 {
                                     "version": ${ref.$version},
                                     "name": "Mapbox Streets",
-                                    "sprite": "mapbox://sprites/mapbox/streets-v${ref.$version}",
-                                    "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
+                                    "sprite": "mapabc://sprites/mapabc/streets-v${ref.$version}",
+                                    "glyphs": "mapabc://fonts/mapabc/{fontstack}/{range}.pbf",
                                     "sources": {...},
                                     "layers": [...]
                                 }
@@ -503,7 +503,7 @@ export default class extends React.Component {
                             </p>
                             <p>
                                 Tiled sources (vector and raster) must specify
-                                their details in terms of the <a href="https://github.com/mapbox/tilejson-spec">TileJSON
+                                their details in terms of the <a href="https://github.com/mapabc/tilejson-spec">TileJSON
                                 specification</a>.
                                 This can be done in several ways:
                             </p>
@@ -513,7 +513,7 @@ export default class extends React.Component {
                                     <code>"maxzoom"</code> directly in the source:
                                     <div className='space-bottom1 clearfix'>
                                         {highlightJSON(`
-                                            "mapbox-streets": {
+                                            "mapabc-streets": {
                                                 "type": "vector",
                                                 "tiles": [
                                                 "http://a.example.com/tiles/{z}/{x}/{y}.pbf",
@@ -527,7 +527,7 @@ export default class extends React.Component {
                                     By providing a <code>"url"</code> to a TileJSON resource:
                                     <div className='space-bottom1 clearfix'>
                                         {highlightJSON(`
-                                            "mapbox-streets": {
+                                            "mapabc-streets": {
                                                 "type": "vector",
                                                 "url": "http://api.example.com/tilejson.json"
                                             }`)}
@@ -554,19 +554,19 @@ export default class extends React.Component {
                                     <h3 className='space-bottom1'><a href='#sources-vector' title='link to vector'>vector</a></h3>
                                     <p>
                                         A vector tile source. Tiles must be in <a
-                                            href="https://www.mapbox.com/developers/vector-tiles/">Mapbox
+                                            href="https://www.mapabc.com/developers/vector-tiles/">Mapbox
                                         Vector Tile format</a>. All geometric coordinates in vector tiles must be
                                         between <code>-1 * extent</code> and <code>(extent * 2) - 1</code> inclusive.
                                         All layers that use a vector source must specify a <a href='#layer-source-layer'><code>"source-layer"</code></a>
                                         value.
                                         For vector tiles hosted by Mapbox, the <code>"url"</code> value should be of the
-                                        form <code>mapbox://<var>mapid</var></code>.
+                                        form <code>mapabc://<var>mapid</var></code>.
                                     </p>
                                     <div className='space-bottom1 clearfix'>
                                         {highlightJSON(`
-                                            "mapbox-streets": {
+                                            "mapabc-streets": {
                                                 "type": "vector",
-                                                "url": "mapbox://mapbox.mapbox-streets-v6"
+                                                "url": "mapabc://mapabc.mapabc-streets-v6"
                                             }`)}
                                     </div>
                                     <div className='space-bottom1 clearfix'>
@@ -588,13 +588,13 @@ export default class extends React.Component {
                                     <h3 className='space-bottom1'><a href='#sources-raster' title='link to raster'>raster</a></h3>
                                     <p>
                                         A raster tile source. For raster tiles hosted by Mapbox, the <code>"url"</code> value should be of the
-                                        form <code>mapbox://<var>mapid</var></code>.
+                                        form <code>mapabc://<var>mapid</var></code>.
                                     </p>
                                     <div className='space-bottom1 clearfix'>
                                         {highlightJSON(`
-                                            "mapbox-satellite": {
+                                            "mapabc-satellite": {
                                                 "type": "raster",
-                                                "url": "mapbox://mapbox.satellite",
+                                                "url": "mapabc://mapabc.satellite",
                                                 "tileSize": 256
                                             }`)}
                                     </div>
@@ -616,13 +616,13 @@ export default class extends React.Component {
                                 <div id='sources-raster-dem' className='pad2 keyline-bottom'>
                                     <h3 className='space-bottom1'><a href='#sources-raster-dem' title='link to raster-dem'>raster-dem</a></h3>
                                     <p>
-                                        A raster DEM source. Currently only supports <a href="https://blog.mapbox.com/global-elevation-data-6689f1d0ba65">Mapbox Terrain RGB</a> (<code>mapbox://mapbox.terrain-rgb</code>)
+                                        A raster DEM source. Currently only supports <a href="https://blog.mapabc.com/global-elevation-data-6689f1d0ba65">Mapbox Terrain RGB</a> (<code>mapabc://mapabc.terrain-rgb</code>)
                                     </p>
                                     <div className='space-bottom1 clearfix'>
                                         {highlightJSON(`
-                                            "mapbox-terrain-rgb": {
+                                            "mapabc-terrain-rgb": {
                                                 "type": "raster-dem",
-                                                "url": "mapbox://mapbox.terrain-rgb"
+                                                "url": "mapabc://mapabc.terrain-rgb"
                                             }`)}
                                     </div>
                                     <div className='space-bottom1 clearfix'>
@@ -705,7 +705,7 @@ export default class extends React.Component {
                                         {highlightJSON(`
                                             "image": {
                                                 "type": "image",
-                                                "url": "/mapbox-gl-js/assets/radar.gif",
+                                                "url": "/mapabc-gl-js/assets/radar.gif",
                                                 "coordinates": [
                                                     [-80.425, 46.437],
                                                     [-71.516, 46.437],
@@ -745,8 +745,8 @@ export default class extends React.Component {
                                             "video": {
                                                 "type": "video",
                                                 "urls": [
-                                                    "https://www.mapbox.com/drone/video/drone.mp4",
-                                                    "https://www.mapbox.com/drone/video/drone.webm"
+                                                    "https://www.mapabc.com/drone/video/drone.mp4",
+                                                    "https://www.mapabc.com/drone/video/drone.webm"
                                                 ],
                                                 "coordinates": [
                                                     [-122.51596391201019, 37.56238816766053],
@@ -824,7 +824,7 @@ export default class extends React.Component {
                                 If you are using Mapbox Studio, you will use prebuilt sprites provided by Mapbox, or you can upload custom SVG
                                 images to build your own sprite. In either case, the sprite will be built automatically and supplied by Mapbox
                                 APIs. If you want to build a sprite by hand and self-host the files, you can
-                                use <a href="https://github.com/mapbox/spritezero-cli">spritezero-cli</a>, a command line utility that builds Mapbox
+                                use <a href="https://github.com/mapabc/spritezero-cli">spritezero-cli</a>, a command line utility that builds Mapbox
                                 GL compatible sprite PNGs and index files from a directory of SVGs.
                             </p>
                         </div>
