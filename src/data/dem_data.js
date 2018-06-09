@@ -92,7 +92,7 @@ export default class DEMData {
 
     _unpackMapbox(r: number, g: number, b: number) {
         // unpacking formula for mapabc.terrain-rgb:
-        // https://www.mapabc.com/help/access-elevation-data/#mapabc-terrain-rgb
+        // http://www.mapabc.com/help/access-elevation-data/#mapabc-terrain-rgb
         return ((r * 256 * 256 + g * 256.0 + b) / 10.0 - 10000.0);
     }
 

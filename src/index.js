@@ -42,12 +42,12 @@ const exported = {
     config,
 
     /**
-     * Gets and sets the map's [access token](https://www.mapabc.com/help/define-access-token/).
+     * Gets and sets the map's [access token](http://www.mapabc.com/help/define-access-token/).
      *
      * @var {string} accessToken
      * @example
      * mapabcgl.accessToken = myAccessToken;
-     * @see [Display a map](https://www.mapabc.com/mapabc-gl-js/examples/)
+     * @see [Display a map](http://www.mapabc.com/mapabc-gl-js/examples/)
      */
     get accessToken() {
         return config.ACCESS_TOKEN;
@@ -68,7 +68,7 @@ const exported = {
  */
 
 /**
- * Test whether the browser [supports Mapbox GL JS](https://www.mapabc.com/help/mapabc-browser-support/#mapabc-gl-js).
+ * Test whether the browser [supports Mapbox GL JS](http://www.mapabc.com/help/mapabc-browser-support/#mapabc-gl-js).
  *
  * @function supported
  * @param {Object} [options]
@@ -78,11 +78,11 @@ const exported = {
  * @return {boolean}
  * @example
  * mapabcgl.supported() // = true
- * @see [Check for browser support](https://www.mapabc.com/mapabc-gl-js/example/check-for-support/)
+ * @see [Check for browser support](http://www.mapabc.com/mapabc-gl-js/example/check-for-support/)
  */
 
 /**
- * Sets the map's [RTL text plugin](https://www.mapabc.com/mapabc-gl-js/plugins/#mapabc-gl-rtl-text).
+ * Sets the map's [RTL text plugin](http://www.mapabc.com/mapabc-gl-js/plugins/#mapabc-gl-rtl-text).
  * Necessary for supporting languages like Arabic and Hebrew that are written right-to-left.
  *
  * @function setRTLTextPlugin
@@ -90,7 +90,7 @@ const exported = {
  * @param {Function} callback Called with an error argument if there is an error.
  * @example
  * mapabcgl.setRTLTextPlugin('https://api.mapabc.com/mapabc-gl-js/plugins/mapabc-gl-rtl-text/v0.1.2/mapabc-gl-rtl-text.js');
- * @see [Add support for right-to-left scripts](https://www.mapabc.com/mapabc-gl-js/example/mapabc-gl-rtl-text/)
+ * @see [Add support for right-to-left scripts](http://www.mapabc.com/mapabc-gl-js/example/mapabc-gl-rtl-text/)
  */
 
 export default exported;

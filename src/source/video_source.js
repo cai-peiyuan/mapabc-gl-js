@@ -14,15 +14,15 @@ import type {Evented} from '../util/evented';
 
 /**
  * A data source containing video.
- * (See the [Style Specification](https://www.mapabc.com/mapabc-gl-style-spec/#sources-video) for detailed documentation of options.)
+ * (See the [Style Specification](http://www.mapabc.com/mapabc-gl-style-spec/#sources-video) for detailed documentation of options.)
  *
  * @example
  * // add to map
  * map.addSource('some id', {
  *    type: 'video',
  *    url: [
- *        'https://www.mapabc.com/blog/assets/baltimore-smoke.mp4',
- *        'https://www.mapabc.com/blog/assets/baltimore-smoke.webm'
+ *        'http://www.mapabc.com/blog/assets/baltimore-smoke.mp4',
+ *        'http://www.mapabc.com/blog/assets/baltimore-smoke.webm'
  *    ],
  *    coordinates: [
  *        [-76.54, 39.18],
@@ -42,7 +42,7 @@ import type {Evented} from '../util/evented';
  * ]);
  *
  * map.removeSource('some id');  // remove
- * @see [Add a video](https://www.mapabc.com/mapabc-gl-js/example/video-on-a-map/)
+ * @see [Add a video](http://www.mapabc.com/mapabc-gl-js/example/video-on-a-map/)
  */
 class VideoSource extends ImageSource {
     options: VideoSourceSpecification;

@@ -146,7 +146,7 @@ const defaultOptions = {
  *
  * To load a style from the Mapbox API, you can use a URL of the form `mapabc://styles/:owner/:style`,
  * where `:owner` is your Mapbox account name and `:style` is the style ID. Or you can use one of the following
- * [the predefined Mapbox styles](https://www.mapabc.com/maps/):
+ * [the predefined Mapbox styles](http://www.mapabc.com/maps/):
  *
  *  * `mapabc://styles/mapabc/streets-v10`
  *  * `mapabc://styles/mapabc/outdoors-v10`
@@ -160,7 +160,7 @@ const defaultOptions = {
  *  * `mapabc://styles/mapabc/navigation-guidance-night-v2`
  *
  * Tilesets hosted with Mapbox can be style-optimized if you append `?optimize=true` to the end of your style URL, like `mapabc://styles/mapabc/streets-v9?optimize=true`.
- * Learn more about style-optimized vector tiles in our [API documentation](https://www.mapabc.com/api-documentation/#retrieve-tiles).
+ * Learn more about style-optimized vector tiles in our [API documentation](http://www.mapabc.com/api-documentation/#retrieve-tiles).
  *
  * @param {boolean} [options.hash=false] If `true`, the map's position (zoom, center latitude, center longitude, bearing, and pitch) will be synced with the hash fragment of the page's URL.
  *   For example, `http://path/to/my/page.html#2.59/39.26/53.07/-24.1/60`.
@@ -193,7 +193,7 @@ const defaultOptions = {
  * @param {string} [options.localIdeographFontFamily=null] If specified, defines a CSS font-family
  *   for locally overriding generation of glyphs in the 'CJK Unified Ideographs' and 'Hangul Syllables' ranges.
  *   In these ranges, font settings from the map's style will be ignored, except for font-weight keywords (light/regular/medium/bold).
- *   The purpose of this option is to avoid bandwidth-intensive glyph server requests. (see [Use locally generated ideographs](https://www.mapabc.com/mapabc-gl-js/example/local-ideographs))
+ *   The purpose of this option is to avoid bandwidth-intensive glyph server requests. (see [Use locally generated ideographs](http://www.mapabc.com/mapabc-gl-js/example/local-ideographs))
  * @param {RequestTransformFunction} [options.transformRequest=null] A callback run before the Map makes a request for an external URL. The callback can be used to modify the url, set headers, or set the credentials property for cross-origin requests.
  *   Expected to return an object with a `url` property and optionally `headers` and `credentials` properties.
  * @param {boolean} [options.collectResourceTiming=false] If `true`, Resource Timing API information will be collected for requests made by GeoJSON and Vector Tile web workers (this information is normally inaccessible from the main Javascript thread). Information will be returned in a `resourceTiming` property of relevant `data` events.
@@ -215,7 +215,7 @@ const defaultOptions = {
  *     }
  *   }
  * });
- * @see [Display a map](https://www.mapabc.com/mapabc-gl-js/examples/)
+ * @see [Display a map](http://www.mapabc.com/mapabc-gl-js/examples/)
  */
 class Map extends Camera {
     style: Style;
@@ -392,7 +392,7 @@ class Map extends Camera {
      * @param {string} [position] position on the map to which the control will be added.
      * Valid values are `'top-left'`, `'top-right'`, `'bottom-left'`, and `'bottom-right'`. Defaults to `'top-right'`.
      * @returns {Map} `this`
-     * @see [Display map navigation controls](https://www.mapabc.com/mapabc-gl-js/example/navigation/)
+     * @see [Display map navigation controls](http://www.mapabc.com/mapabc-gl-js/example/navigation/)
      */
     addControl(control: IControl, position?: ControlPosition) {
         if (position === undefined && control.getDefaultPosition) {
@@ -612,7 +612,7 @@ class Map extends Camera {
      *
      * @param {PointLike} point The pixel coordinates to unproject.
      * @returns {LngLat} The {@link LngLat} corresponding to `point`.
-     * @see [Show polygon information on click](https://www.mapabc.com/mapabc-gl-js/example/polygon-popup-on-click/)
+     * @see [Show polygon information on click](http://www.mapabc.com/mapabc-gl-js/example/polygon-popup-on-click/)
      */
     unproject(point: PointLike) {
         return this.transform.pointLocation(Point.convert(point));
@@ -792,7 +792,7 @@ class Map extends Camera {
      * @param {Object} [options]
      * @param {Array<string>} [options.layers] An array of style layer IDs for the query to inspect.
      *   Only features within these layers will be returned. If this parameter is undefined, all layers will be checked.
-     * @param {Array} [options.filter] A [filter](https://www.mapabc.com/mapabc-gl-js/style-spec/#other-filter)
+     * @param {Array} [options.filter] A [filter](http://www.mapabc.com/mapabc-gl-js/style-spec/#other-filter)
      *   to limit query results.
      *
      * @returns {Array<Object>} An array of [GeoJSON](http://geojson.org/)
@@ -849,9 +849,9 @@ class Map extends Camera {
      * @example
      * // Query all rendered features from a single layer
      * var features = map.queryRenderedFeatures({ layers: ['my-layer-name'] });
-     * @see [Get features under the mouse pointer](https://www.mapabc.com/mapabc-gl-js/example/queryrenderedfeatures/)
-     * @see [Highlight features within a bounding box](https://www.mapabc.com/mapabc-gl-js/example/using-box-queryrenderedfeatures/)
-     * @see [Center the map on a clicked symbol](https://www.mapabc.com/mapabc-gl-js/example/center-on-symbol/)
+     * @see [Get features under the mouse pointer](http://www.mapabc.com/mapabc-gl-js/example/queryrenderedfeatures/)
+     * @see [Highlight features within a bounding box](http://www.mapabc.com/mapabc-gl-js/example/using-box-queryrenderedfeatures/)
+     * @see [Center the map on a clicked symbol](http://www.mapabc.com/mapabc-gl-js/example/center-on-symbol/)
      */
     queryRenderedFeatures(geometry?: PointLike | [PointLike, PointLike], options?: Object) {
         // The first parameter can be omitted entirely, making this effectively an overloaded method
@@ -933,7 +933,7 @@ class Map extends Camera {
      * @param {Object} [parameters]
      * @param {string} [parameters.sourceLayer] The name of the vector tile layer to query. *For vector tile
      *   sources, this parameter is required.* For GeoJSON sources, it is ignored.
-     * @param {Array} [parameters.filter] A [filter](https://www.mapabc.com/mapabc-gl-js/style-spec/#other-filter)
+     * @param {Array} [parameters.filter] A [filter](http://www.mapabc.com/mapabc-gl-js/style-spec/#other-filter)
      *   to limit query results.
      *
      * @returns {Array<Object>} An array of [GeoJSON](http://geojson.org/)
@@ -952,8 +952,8 @@ class Map extends Camera {
      * rectangle, even if the highway extends into other tiles, and the portion of the highway within each map tile
      * will be returned as a separate feature. Similarly, a point feature near a tile boundary may appear in multiple
      * tiles due to tile buffering.
-     * @see [Filter features within map view](https://www.mapabc.com/mapabc-gl-js/example/filter-features-within-map-view/)
-     * @see [Highlight features containing similar data](https://www.mapabc.com/mapabc-gl-js/example/query-similar-features/)
+     * @see [Filter features within map view](http://www.mapabc.com/mapabc-gl-js/example/filter-features-within-map-view/)
+     * @see [Highlight features containing similar data](http://www.mapabc.com/mapabc-gl-js/example/query-similar-features/)
      */
     querySourceFeatures(sourceID: string, parameters: ?{sourceLayer: ?string, filter: ?Array<any>}) {
         return this.style.querySourceFeatures(sourceID, parameters);
@@ -974,7 +974,7 @@ class Map extends Camera {
      *   for locally overriding generation of glyphs in the 'CJK Unified Ideographs' and 'Hangul Syllables'
      *   ranges. Forces a full update.
      * @returns {Map} `this`
-     * @see [Change a map's style](https://www.mapabc.com/mapabc-gl-js/example/setstyle/)
+     * @see [Change a map's style](http://www.mapabc.com/mapabc-gl-js/example/setstyle/)
      */
     setStyle(style: StyleSpecification | string | null, options?: {diff?: boolean} & StyleOptions) {
         const shouldTryDiff = (!options || (options.diff !== false && !options.localIdeographFontFamily)) && this.style;
@@ -1040,13 +1040,13 @@ class Map extends Camera {
      *
      * @param {string} id The ID of the source to add. Must not conflict with existing sources.
      * @param {Object} source The source object, conforming to the
-     * Mapbox Style Specification's [source definition](https://www.mapabc.com/mapabc-gl-style-spec/#sources) or
+     * Mapbox Style Specification's [source definition](http://www.mapabc.com/mapabc-gl-style-spec/#sources) or
      * {@link CanvasSourceOptions}.
      * @fires source.add
      * @returns {Map} `this`
-     * @see [Draw GeoJSON points](https://www.mapabc.com/mapabc-gl-js/example/geojson-markers/)
-     * @see [Style circles using data-driven styling](https://www.mapabc.com/mapabc-gl-js/example/data-driven-circle-colors/)
-     * @see [Set a point after Geocoder result](https://www.mapabc.com/mapabc-gl-js/example/point-from-geocoder-result/)
+     * @see [Draw GeoJSON points](http://www.mapabc.com/mapabc-gl-js/example/geojson-markers/)
+     * @see [Style circles using data-driven styling](http://www.mapabc.com/mapabc-gl-js/example/data-driven-circle-colors/)
+     * @see [Set a point after Geocoder result](http://www.mapabc.com/mapabc-gl-js/example/point-from-geocoder-result/)
      */
     addSource(id: string, source: SourceSpecification) {
         this.style.addSource(id, source);
@@ -1119,9 +1119,9 @@ class Map extends Camera {
      * @param {string} id The ID of the source to get.
      * @returns {?Object} The style source with the specified ID, or `undefined`
      *   if the ID corresponds to no existing sources.
-     * @see [Create a draggable point](https://www.mapabc.com/mapabc-gl-js/example/drag-a-point/)
-     * @see [Animate a point](https://www.mapabc.com/mapabc-gl-js/example/animate-point-along-line/)
-     * @see [Add live realtime data](https://www.mapabc.com/mapabc-gl-js/example/live-geojson/)
+     * @see [Create a draggable point](http://www.mapabc.com/mapabc-gl-js/example/drag-a-point/)
+     * @see [Animate a point](http://www.mapabc.com/mapabc-gl-js/example/animate-point-along-line/)
+     * @see [Add live realtime data](http://www.mapabc.com/mapabc-gl-js/example/live-geojson/)
      */
     getSource(id: string) {
         return this.style.getSource(id);
@@ -1133,8 +1133,8 @@ class Map extends Camera {
      * {@link Map#error} event will be fired if there is not enough space in the
      * sprite to add this image.
      *
-     * @see [Add an icon to the map](https://www.mapabc.com/mapabc-gl-js/example/add-image/)
-     * @see [Add a generated icon to the map](https://www.mapabc.com/mapabc-gl-js/example/add-image-generated/)
+     * @see [Add an icon to the map](http://www.mapabc.com/mapabc-gl-js/example/add-image/)
+     * @see [Add a generated icon to the map](http://www.mapabc.com/mapabc-gl-js/example/add-image-generated/)
      * @param id The ID of the image.
      * @param image The image as an `HTMLImageElement`, `ImageData`, or object with `width`, `height`, and `data`
      * properties with the same format as `ImageData`.
@@ -1187,7 +1187,7 @@ class Map extends Camera {
      *
      * @param {string} url The URL of the image file. Image file must be in png, webp, or jpg format.
      * @param {Function} callback Expecting `callback(error, data)`. Called when the image has loaded or with an error argument if there is an error.
-     * @see [Add an icon to the map](https://www.mapabc.com/mapabc-gl-js/example/add-image/)
+     * @see [Add an icon to the map](http://www.mapabc.com/mapabc-gl-js/example/add-image/)
      */
     loadImage(url: string, callback: Function) {
         getImage(this._transformRequest(url, ResourceType.Image), callback);
@@ -1204,19 +1204,19 @@ class Map extends Camera {
     }
 
     /**
-     * Adds a [Mapbox style layer](https://www.mapabc.com/mapabc-gl-style-spec/#layers)
+     * Adds a [Mapbox style layer](http://www.mapabc.com/mapabc-gl-style-spec/#layers)
      * to the map's style.
      *
      * A layer defines styling for data from a specified source.
      *
      * @param {Object} layer The style layer to add, conforming to the Mapbox Style Specification's
-     *   [layer definition](https://www.mapabc.com/mapabc-gl-style-spec/#layers).
+     *   [layer definition](http://www.mapabc.com/mapabc-gl-style-spec/#layers).
      * @param {string} [before] The ID of an existing layer to insert the new layer before.
      *   If this argument is omitted, the layer will be appended to the end of the layers array.
      * @returns {Map} `this`
-     * @see [Create and style clusters](https://www.mapabc.com/mapabc-gl-js/example/cluster/)
-     * @see [Add a vector tile source](https://www.mapabc.com/mapabc-gl-js/example/vector-source/)
-     * @see [Add a WMS source](https://www.mapabc.com/mapabc-gl-js/example/wms/)
+     * @see [Create and style clusters](http://www.mapabc.com/mapabc-gl-js/example/cluster/)
+     * @see [Add a vector tile source](http://www.mapabc.com/mapabc-gl-js/example/vector-source/)
+     * @see [Add a WMS source](http://www.mapabc.com/mapabc-gl-js/example/wms/)
      */
     addLayer(layer: LayerSpecification, before?: string) {
         this.style.addLayer(layer, before);
@@ -1258,8 +1258,8 @@ class Map extends Camera {
      * @param {string} id The ID of the layer to get.
      * @returns {?Object} The layer with the specified ID, or `undefined`
      *   if the ID corresponds to no existing layers.
-     * @see [Filter symbols by toggling a list](https://www.mapabc.com/mapabc-gl-js/example/filter-markers/)
-     * @see [Filter symbols by text input](https://www.mapabc.com/mapabc-gl-js/example/filter-markers-by-input/)
+     * @see [Filter symbols by toggling a list](http://www.mapabc.com/mapabc-gl-js/example/filter-markers/)
+     * @see [Filter symbols by text input](http://www.mapabc.com/mapabc-gl-js/example/filter-markers-by-input/)
      */
     getLayer(id: string) {
         return this.style.getLayer(id);
@@ -1270,13 +1270,13 @@ class Map extends Camera {
      *
      * @param {string} layer The ID of the layer to which the filter will be applied.
      * @param {Array | null | undefined} filter The filter, conforming to the Mapbox Style Specification's
-     *   [filter definition](https://www.mapabc.com/mapabc-gl-js/style-spec/#other-filter).  If `null` or `undefined` is provided, the function removes any existing filter from the layer.
+     *   [filter definition](http://www.mapabc.com/mapabc-gl-js/style-spec/#other-filter).  If `null` or `undefined` is provided, the function removes any existing filter from the layer.
      * @returns {Map} `this`
      * @example
      * map.setFilter('my-layer', ['==', 'name', 'USA']);
-     * @see [Filter features within map view](https://www.mapabc.com/mapabc-gl-js/example/filter-features-within-map-view/)
-     * @see [Highlight features containing similar data](https://www.mapabc.com/mapabc-gl-js/example/query-similar-features/)
-     * @see [Create a timeline animation](https://www.mapabc.com/mapabc-gl-js/example/timeline-animation/)
+     * @see [Filter features within map view](http://www.mapabc.com/mapabc-gl-js/example/filter-features-within-map-view/)
+     * @see [Highlight features containing similar data](http://www.mapabc.com/mapabc-gl-js/example/query-similar-features/)
+     * @see [Create a timeline animation](http://www.mapabc.com/mapabc-gl-js/example/timeline-animation/)
      */
     setFilter(layer: string, filter: ?FilterSpecification) {
         this.style.setFilter(layer, filter);
@@ -1316,13 +1316,13 @@ class Map extends Camera {
      * @param {string} layer The ID of the layer to set the paint property in.
      * @param {string} name The name of the paint property to set.
      * @param {*} value The value of the paint propery to set.
-     *   Must be of a type appropriate for the property, as defined in the [Mapbox Style Specification](https://www.mapabc.com/mapabc-gl-style-spec/).
+     *   Must be of a type appropriate for the property, as defined in the [Mapbox Style Specification](http://www.mapabc.com/mapabc-gl-style-spec/).
      * @returns {Map} `this`
      * @example
      * map.setPaintProperty('my-layer', 'fill-color', '#faafee');
-     * @see [Change a layer's color with buttons](https://www.mapabc.com/mapabc-gl-js/example/color-switcher/)
-     * @see [Adjust a layer's opacity](https://www.mapabc.com/mapabc-gl-js/example/adjust-layer-opacity/)
-     * @see [Create a draggable point](https://www.mapabc.com/mapabc-gl-js/example/drag-a-point/)
+     * @see [Change a layer's color with buttons](http://www.mapabc.com/mapabc-gl-js/example/color-switcher/)
+     * @see [Adjust a layer's opacity](http://www.mapabc.com/mapabc-gl-js/example/adjust-layer-opacity/)
+     * @see [Create a draggable point](http://www.mapabc.com/mapabc-gl-js/example/drag-a-point/)
      */
     setPaintProperty(layer: string, name: string, value: any) {
         this.style.setPaintProperty(layer, name, value);
@@ -1346,7 +1346,7 @@ class Map extends Camera {
      *
      * @param {string} layer The ID of the layer to set the layout property in.
      * @param {string} name The name of the layout property to set.
-     * @param {*} value The value of the layout propery. Must be of a type appropriate for the property, as defined in the [Mapbox Style Specification](https://www.mapabc.com/mapabc-gl-style-spec/).
+     * @param {*} value The value of the layout propery. Must be of a type appropriate for the property, as defined in the [Mapbox Style Specification](http://www.mapabc.com/mapabc-gl-style-spec/).
      * @returns {Map} `this`
      * @example
      * map.setLayoutProperty('my-layer', 'visibility', 'none');
@@ -1371,7 +1371,7 @@ class Map extends Camera {
     /**
      * Sets the any combination of light values.
      *
-     * @param light Light properties to set. Must conform to the [Mapbox Style Specification](https://www.mapabc.com/mapabc-gl-style-spec/#light).
+     * @param light Light properties to set. Must conform to the [Mapbox Style Specification](http://www.mapabc.com/mapabc-gl-style-spec/#light).
      * @returns {Map} `this`
      */
     setLight(light: LightSpecification) {
@@ -1440,8 +1440,8 @@ class Map extends Camera {
      * map controls.
      *
      * @returns {HTMLElement} The container of the map's `<canvas>`.
-     * @see [Create a draggable point](https://www.mapabc.com/mapabc-gl-js/example/drag-a-point/)
-     * @see [Highlight features within a bounding box](https://www.mapabc.com/mapabc-gl-js/example/using-box-queryrenderedfeatures/)
+     * @see [Create a draggable point](http://www.mapabc.com/mapabc-gl-js/example/drag-a-point/)
+     * @see [Highlight features within a bounding box](http://www.mapabc.com/mapabc-gl-js/example/using-box-queryrenderedfeatures/)
      */
     getCanvasContainer() {
         return this._canvasContainer;
@@ -1451,9 +1451,9 @@ class Map extends Camera {
      * Returns the map's `<canvas>` element.
      *
      * @returns {HTMLCanvasElement} The map's `<canvas>` element.
-     * @see [Measure distances](https://www.mapabc.com/mapabc-gl-js/example/measure/)
-     * @see [Display a popup on hover](https://www.mapabc.com/mapabc-gl-js/example/popup-on-hover/)
-     * @see [Center the map on a clicked symbol](https://www.mapabc.com/mapabc-gl-js/example/center-on-symbol/)
+     * @see [Measure distances](http://www.mapabc.com/mapabc-gl-js/example/measure/)
+     * @see [Display a popup on hover](http://www.mapabc.com/mapabc-gl-js/example/popup-on-hover/)
+     * @see [Center the map on a clicked symbol](http://www.mapabc.com/mapabc-gl-js/example/center-on-symbol/)
      */
     getCanvas() {
         return this._canvas;
@@ -1477,7 +1477,7 @@ class Map extends Camera {
             warnOnce('This page appears to be missing CSS declarations for ' +
                 'Mapbox GL JS, which may cause the map to display incorrectly. ' +
                 'Please ensure your page includes mapabc-gl.css, as described ' +
-                'in https://www.mapabc.com/mapabc-gl-js/api/.');
+                'in http://www.mapabc.com/mapabc-gl-js/api/.');
         }
     }
 

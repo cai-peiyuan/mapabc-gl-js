@@ -19,7 +19,7 @@
 * Add support for Mapzen Terrarium tiles in `raster-dem` sources [#6110](https://github.com/mapabc/mapabc-gl-js/pull/6110)
 * Add `preventDefault` method on `mousedown`, `touchstart`, and `dblclick` events [#6218](https://github.com/mapabc/mapabc-gl-js/pull/6218)
 * Add `originalEvent` property on `zoomend` and `moveend` for user-initiated scroll events (h/t @stepankuzmin) [#6175](https://github.com/mapabc/mapabc-gl-js/pull/6175)
-* Accept arguments of type `value` in [`"length"` expressions](https://www.mapabc.com/mapabc-gl-js/style-spec/#expressions-length) [#6244](https://github.com/mapabc/mapabc-gl-js/pull/6244)
+* Accept arguments of type `value` in [`"length"` expressions](http://www.mapabc.com/mapabc-gl-js/style-spec/#expressions-length) [#6244](https://github.com/mapabc/mapabc-gl-js/pull/6244)
 * Introduce `MapWheelEvent`[#6237](https://github.com/mapabc/mapabc-gl-js/pull/6237)
 * Add setter for `ScaleControl` units (h/t @ryanhamley) [#6138](https://github.com/mapabc/mapabc-gl-js/pull/6138), [#6274](https://github.com/mapabc/mapabc-gl-js/pull/6274)
 * Add `open` event for `Popup` [#6311](https://github.com/mapabc/mapabc-gl-js/pull/6311)
@@ -234,7 +234,7 @@
 ### :sparkles: Features and improvements
 - Use setData operation when diffing geojson sources [#5332](https://github.com/mapabc/mapabc-gl-js/pull/5332)
 - Return early from draw calls on layers where opacity=0 [#5429](https://github.com/mapabc/mapabc-gl-js/pull/5429)
-- A [heatmap](https://www.mapabc.com/mapabc-gl-js/example/heatmap-layer/) layer type is now available. This layer type allows you to visualize and explore massive datasets of points, reflecting the shape and density of data well while also looking beautiful. See [the blog post](https://blog.mapabc.com/sneak-peek-at-heatmaps-in-mapabc-gl-73b41d4b16ae) for further details.
+- A [heatmap](http://www.mapabc.com/mapabc-gl-js/example/heatmap-layer/) layer type is now available. This layer type allows you to visualize and explore massive datasets of points, reflecting the shape and density of data well while also looking beautiful. See [the blog post](https://blog.mapabc.com/sneak-peek-at-heatmaps-in-mapabc-gl-73b41d4b16ae) for further details.
   ![](https://cdn-images-1.medium.com/max/1600/1*Dme5MAgdA3pYdTRHUQzvLw.png)
 - The value of a style property or filter can now be an [expression](http://www.mapabc.com/mapabc-gl-js/style-spec/#expressions). Expressions are a way of doing data-driven and zoom-driven styling that provides more flexibility and control, and unifies property and filter syntax.
 
@@ -578,7 +578,7 @@
 
 #### Deprecation Notices
 
-- [Style classes](https://www.mapabc.com/mapabc-gl-style-spec/#layer-paint.*) are deprecated and will be removed in an upcoming release of Mapbox GL JS.
+- [Style classes](http://www.mapabc.com/mapabc-gl-style-spec/#layer-paint.*) are deprecated and will be removed in an upcoming release of Mapbox GL JS.
 
 #### New Features
 
@@ -1422,14 +1422,14 @@
 #### Breaking changes
 
 * `map.setView(latlng, zoom, bearing)` has been removed. Use
-  [`map.jumpTo(options)`](https://www.mapabc.com/mapabc-gl-js/api/#map/jumpto) instead:
+  [`map.jumpTo(options)`](http://www.mapabc.com/mapabc-gl-js/api/#map/jumpto) instead:
 
   ```js
   map.setView([40, -74.50], 9) // 0.7.0 or earlier
   map.jumpTo({center: [40, -74.50], zoom: 9}); // now
   ```
-* [`map.easeTo`](https://www.mapabc.com/mapabc-gl-js/api/#map/easeto) and
-  [`map.flyTo`](https://www.mapabc.com/mapabc-gl-js/api/#map/flyto) now accept a single
+* [`map.easeTo`](http://www.mapabc.com/mapabc-gl-js/api/#map/easeto) and
+  [`map.flyTo`](http://www.mapabc.com/mapabc-gl-js/api/#map/flyto) now accept a single
   options object rather than positional parameters:
 
   ```js
@@ -1437,10 +1437,10 @@
   map.easeTo({center: [40, -74.50], zoom: 9, duration: 400}); // now
   ```
 * `mapabcgl.Source` is no longer exported. Use `map.addSource()` instead. See the
-  [GeoJSON line](https://www.mapabc.com/mapabc-gl-js/example/geojson-line/) or
-  [GeoJSON markers](https://www.mapabc.com/mapabc-gl-js/example/geojson-markers/)
+  [GeoJSON line](http://www.mapabc.com/mapabc-gl-js/example/geojson-line/) or
+  [GeoJSON markers](http://www.mapabc.com/mapabc-gl-js/example/geojson-markers/)
   examples.
-* `mapabcgl.util.supported()` moved to [`mapabcgl.supported()`](https://www.mapabc.com/mapabc-gl-js/api/#mapabcgl/supported).
+* `mapabcgl.util.supported()` moved to [`mapabcgl.supported()`](http://www.mapabc.com/mapabc-gl-js/api/#mapabcgl/supported).
 
 #### UX improvements
 

@@ -1,7 +1,7 @@
 /*---
 title: Restrict map panning to an area
 description: >-
-  Prevent a map from being panned to a different place by setting [`maxBounds`](https://www.mapabc.com/mapabc-gl-js/api#map#setmaxbounds).
+  Prevent a map from being panned to a different place by setting [`maxBounds`](http://www.mapabc.com/mapabc-gl-js/api#map#setmaxbounds).
 tags:
   - user-interaction
 pathname: /mapabc-gl-js/example/restrict-bounds/

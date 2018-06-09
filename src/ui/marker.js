@@ -34,7 +34,7 @@ type Options = {
  * var marker = new mapabcgl.Marker()
  *   .setLngLat([30.5, 50.5])
  *   .addTo(map);
- * @see [Add custom icons with Markers](https://www.mapabc.com/mapabc-gl-js/example/custom-marker-icons/)
+ * @see [Add custom icons with Markers](http://www.mapabc.com/mapabc-gl-js/example/custom-marker-icons/)
  */
 export default class Marker extends Evented {
     _map: Map;

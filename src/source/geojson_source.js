@@ -16,7 +16,7 @@ import type {PerformanceResourceTiming} from '../types/performance_resource_timi
 
 /**
  * A source containing GeoJSON.
- * (See the [Style Specification](https://www.mapabc.com/mapabc-gl-style-spec/#sources-geojson) for detailed documentation of options.)
+ * (See the [Style Specification](http://www.mapabc.com/mapabc-gl-style-spec/#sources-geojson) for detailed documentation of options.)
  *
  * @example
  * map.addSource('some id', {
@@ -55,9 +55,9 @@ import type {PerformanceResourceTiming} from '../types/performance_resource_timi
  *       }
  *   }]
  * });
- * @see [Draw GeoJSON points](https://www.mapabc.com/mapabc-gl-js/example/geojson-markers/)
- * @see [Add a GeoJSON line](https://www.mapabc.com/mapabc-gl-js/example/geojson-line/)
- * @see [Create a heatmap from points](https://www.mapabc.com/mapabc-gl-js/example/heatmap/)
+ * @see [Draw GeoJSON points](http://www.mapabc.com/mapabc-gl-js/example/geojson-markers/)
+ * @see [Add a GeoJSON line](http://www.mapabc.com/mapabc-gl-js/example/geojson-line/)
+ * @see [Create a heatmap from points](http://www.mapabc.com/mapabc-gl-js/example/heatmap/)
  */
 class GeoJSONSource extends Evented implements Source {
     type: 'geojson';

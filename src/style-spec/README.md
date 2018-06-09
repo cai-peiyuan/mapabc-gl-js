@@ -21,7 +21,7 @@ If you install this package globally, you will have access to several CLI tools.
 $ gl-style-composite style.json
 ```
 
-Will take a non-composited style and produce a [composite style](https://www.mapabc.com/blog/better-label-placement-in-mapabc-studio/).
+Will take a non-composited style and produce a [composite style](http://www.mapabc.com/blog/better-label-placement-in-mapabc-studio/).
 
 ### `gl-style-migrate`
 

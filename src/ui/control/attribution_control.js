@@ -11,7 +11,7 @@ type Options = {
 };
 
 /**
- * An `AttributionControl` control presents the map's [attribution information](https://www.mapabc.com/help/attribution/).
+ * An `AttributionControl` control presents the map's [attribution information](http://www.mapabc.com/help/attribution/).
  *
  * @implements {IControl}
  * @param {Object} [options]
@@ -97,7 +97,7 @@ class AttributionControl {
                 }
                 return acc;
             }, `?`);
-            editLink.href = `https://www.mapabc.com/feedback/${paramString}${this._map._hash ? this._map._hash.getHashString(true) : ''}`;
+            editLink.href = `http://www.mapabc.com/feedback/${paramString}${this._map._hash ? this._map._hash.getHashString(true) : ''}`;
         }
     }
 

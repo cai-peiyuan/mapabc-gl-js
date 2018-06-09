@@ -2,8 +2,8 @@
 title: Fit to the bounds of a LineString
 description: >-
   Get the bounds of a LineString by passing its first coordinates to
-  [`LngLatBounds`](https://www.mapabc.com/mapabc-gl-js/api/#lnglatbounds)
-  and chaining [`extend`](https://www.mapabc.com/mapabc-gl-js/api/#lnglatbounds#extend)
+  [`LngLatBounds`](http://www.mapabc.com/mapabc-gl-js/api/#lnglatbounds)
+  and chaining [`extend`](http://www.mapabc.com/mapabc-gl-js/api/#lnglatbounds#extend)
   to include the last coordinates.
 tags:
   - user-interaction

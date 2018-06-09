@@ -1,6 +1,6 @@
 ## Filter
 
-Filter expressions are used to target specific data in a layer. This library implements the semantics specified by the [Mapbox GL JS spec](https://www.mapabc.com/mapabc-gl-style-spec/#filter).
+Filter expressions are used to target specific data in a layer. This library implements the semantics specified by the [Mapbox GL JS spec](http://www.mapabc.com/mapabc-gl-style-spec/#filter).
 
 ### API
 

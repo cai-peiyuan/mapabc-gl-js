@@ -86,7 +86,7 @@ export const getJSON = function(requestParameters: RequestParameters, callback: 
             callback(null, data);
         } else {
             if (xhr.status === 401 && requestParameters.url.match(/mapabc.com/)) {
-                callback(new AJAXError(`${xhr.statusText}: you may have provided an invalid Mapbox access token. See https://www.mapabc.com/api-documentation/#access-tokens`, xhr.status, requestParameters.url));
+                callback(new AJAXError(`${xhr.statusText}: you may have provided an invalid Mapbox access token. See http://www.mapabc.com/api-documentation/#access-tokens`, xhr.status, requestParameters.url));
             } else {
                 callback(new AJAXError(xhr.statusText, xhr.status, requestParameters.url));
             }

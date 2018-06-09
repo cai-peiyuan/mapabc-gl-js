@@ -85,7 +85,7 @@ function checkGeolocationSupport(callback) {
  *     },
  *     trackUserLocation: true
  * }));
- * @see [Locate the user](https://www.mapabc.com/mapabc-gl-js/example/locate-user/)
+ * @see [Locate the user](http://www.mapabc.com/mapabc-gl-js/example/locate-user/)
  */
 class GeolocateControl extends Evented {
     _map: Map;
