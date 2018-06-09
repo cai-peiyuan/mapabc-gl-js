@@ -1,4 +1,4 @@
-[<img width="400" alt="Mapbox" src="docs/pages/assets/logo.png">](https://www.mapabc.com/)
+[<img width="400" alt="Mapabc" src="docs/pages/assets/logo.jpg">](https://www.mapbox.com/)
 
 **Mapbox GL JS** is a JavaScript library for interactive, customizable vector maps on the web. It takes map styles that conform to the
 [Mapbox Style Specification](https://www.mapbox.com/mapbox-gl-js/style-spec), applies them to vector tiles that
