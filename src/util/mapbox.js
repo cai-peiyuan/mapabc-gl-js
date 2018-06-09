@@ -34,8 +34,31 @@ function makeAPIURL(urlObject: UrlObject, accessToken: string | null | void): st
     return formatUrl(urlObject);
 }
 
+function makeFontAPIURL(urlObject: UrlObject, accessToken: string | null | void): string {
+    var index = Math.floor((Math.random()*config.FONT_DOMAINS.length)); 
+    var url = config.FONT_DOMAINS[index];
+    const apiUrlObject = parseUrl(url);
+    urlObject.protocol = apiUrlObject.protocol;
+    urlObject.authority = apiUrlObject.authority;
+
+    if (apiUrlObject.path !== '/') {
+        urlObject.path = `${apiUrlObject.path}${urlObject.path}`;
+    }
+
+    if (!config.REQUIRE_ACCESS_TOKEN) return formatUrl(urlObject);
+
+    accessToken = accessToken || config.ACCESS_TOKEN;
+    if (!accessToken)
+        throw new Error(`An API access token is required to use Mapbox GL. ${help}`);
+    if (accessToken[0] === 's')
+        throw new Error(`Use a public access token (pk.*) with Mapbox GL, not a secret access token (sk.*). ${help}`);
+
+    urlObject.params.push(`access_token=${accessToken}`);
+    return formatUrl(urlObject);
+}
+
 function isMapboxURL(url: string) {
-    return url.indexOf('mapbox:') === 0;
+    return url.indexOf('mapabc:') === 0;
 }
 
 export { isMapboxURL };
@@ -51,7 +74,7 @@ export const normalizeGlyphsURL = function(url: string, accessToken?: string): s
     if (!isMapboxURL(url)) return url;
     const urlObject = parseUrl(url);
     urlObject.path = `/fonts/v1${urlObject.path}`;
-    return makeAPIURL(urlObject, accessToken);
+    return makeFontAPIURL(urlObject, accessToken);
 };
 
 export const normalizeSourceURL = function(url: string, accessToken?: string): string {
@@ -70,7 +93,7 @@ export const normalizeSpriteURL = function(url: string, format: string, extensio
         urlObject.path += `${format}${extension}`;
         return formatUrl(urlObject);
     }
-    urlObject.path = `/styles/v1${urlObject.path}/sprite${format}${extension}`;
+    urlObject.path = `/sprite/v1${urlObject.path}/sprite${format}${extension}`;
     return makeAPIURL(urlObject, accessToken);
 };
 

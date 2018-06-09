@@ -76,6 +76,9 @@ Start the debug server
 ```bash
 MAPBOX_ACCESS_TOKEN={YOUR MAPBOX ACCESS TOKEN} yarn run start-debug
 ```
+```bash
+MAPBOX_ACCESS_TOKEN=pk.eyJ1IjoiY2FpcGVpeXVhbiIsImEiOiJjamZ0aDY4YjIwOG5zMzBsNmdwbnFjbHg3In0.p9Mnm9HmZvc8zSFzE4peQw yarn run start-debug
+```
 
 Open the debug page at [http://localhost:9966/debug](http://localhost:9966/debug)
 
