@@ -6,11 +6,18 @@ type Config = {|
   ACCESS_TOKEN: ?string
 |};
 
-const config: Config = {
-    API_URL: 'http://mapabc0.pinganzhongsheng.com:6060/mapserver',
+/*const config : Config = {
+    API_URL: api_config.url,
     REQUIRE_ACCESS_TOKEN: true,
     ACCESS_TOKEN: null,
-    FONT_DOMAINS : [
+    FONT_URL : api_config.font_url
+}*/
+
+const config: Config = {
+    API_URL: 'http://114.215.68.185:6060/mapserver',
+    REQUIRE_ACCESS_TOKEN: true,
+    ACCESS_TOKEN: null,
+    FONT_URL : [
     	'http://mapabc0.pinganzhongsheng.com:6060/mapserver',
     	'http://mapabc1.pinganzhongsheng.com:6060/mapserver',
     	'http://mapabc2.pinganzhongsheng.com:6060/mapserver',
