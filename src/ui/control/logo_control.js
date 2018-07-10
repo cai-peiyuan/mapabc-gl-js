@@ -7,8 +7,8 @@ import { bindAll } from '../../util/util';
 import type Map from '../map';
 
 /**
- * A `LogoControl` is a control that adds the Mapbox watermark
- * to the map as required by the [terms of service](https://www.mapabc.com/tos/) for Mapbox
+ * A `LogoControl` is a control that adds the MapAbc watermark
+ * to the map as required by the [terms of service](https://www.mapabc.com/tos/) for MapAbc
  * vector tiles and core styles.
  *
  * @implements {IControl}
@@ -30,7 +30,7 @@ class LogoControl {
         const anchor = DOM.create('a', 'mapabcgl-ctrl-logo');
         anchor.target = "_blank";
         anchor.href = "https://www.mapabc.com/";
-        anchor.setAttribute("aria-label", "Mapbox logo");
+        anchor.setAttribute("aria-label", "MapAbc logo");
         anchor.setAttribute("rel", "noopener");
         this._container.appendChild(anchor);
         this._container.style.display = 'none';
