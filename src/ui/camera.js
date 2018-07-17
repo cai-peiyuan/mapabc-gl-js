@@ -120,7 +120,7 @@ class Camera extends Evented {
      * @returns {Map} `this`
      * @example
      * map.setCenter([-74, 38]);
-     * @see [Move symbol with the keyboard](https://www.mapabc.com/mapabc-gl-js/example/rotating-controllable-marker/)
+     * @see [Move symbol with the keyboard](http://www.mapabc.com/mapabc-gl-js/example/rotating-controllable-marker/)
      */
     setCenter(center: LngLatLike, eventData?: Object) {
         return this.jumpTo({center: center}, eventData);
@@ -136,7 +136,7 @@ class Camera extends Evented {
      * @fires movestart
      * @fires moveend
      * @returns {Map} `this`
-     * @see [Navigate the map with game-like controls](https://www.mapabc.com/mapabc-gl-js/example/game-controls/)
+     * @see [Navigate the map with game-like controls](http://www.mapabc.com/mapabc-gl-js/example/game-controls/)
      */
     panBy(offset: PointLike, options?: AnimationOptions, eventData?: Object) {
         offset = Point.convert(offset).mult(-1);
@@ -255,7 +255,7 @@ class Camera extends Evented {
      *
      * @memberof Map#
      * @returns The map's current bearing.
-     * @see [Navigate the map with game-like controls](https://www.mapabc.com/mapabc-gl-js/example/game-controls/)
+     * @see [Navigate the map with game-like controls](http://www.mapabc.com/mapabc-gl-js/example/game-controls/)
      */
     getBearing(): number { return this.transform.bearing; }
 
@@ -462,7 +462,7 @@ class Camera extends Evented {
      * map.fitBounds(bbox, {
      *   padding: {top: 10, bottom:25, left: 15, right: 5}
      * });
-     * @see [Fit a map to a bounding box](https://www.mapabc.com/mapabc-gl-js/example/fitbounds/)
+     * @see [Fit a map to a bounding box](http://www.mapabc.com/mapabc-gl-js/example/fitbounds/)
      */
     fitBounds(bounds: LngLatBoundsLike, options?: AnimationOptions & CameraOptions, eventData?: Object) {
         const calculatedOptions = this.cameraForBounds(bounds, options);
@@ -568,7 +568,7 @@ class Camera extends Evented {
      * @fires zoomend
      * @fires pitchend
      * @returns {Map} `this`
-     * @see [Navigate the map with game-like controls](https://www.mapabc.com/mapabc-gl-js/example/game-controls/)
+     * @see [Navigate the map with game-like controls](http://www.mapabc.com/mapabc-gl-js/example/game-controls/)
      */
     easeTo(options: CameraOptions & AnimationOptions & {delayEndEvents?: number}, eventData?: Object) {
         this.stop();
@@ -752,9 +752,9 @@ class Camera extends Evented {
      *     return t;
      *   }
      * });
-     * @see [Fly to a location](https://www.mapabc.com/mapabc-gl-js/example/flyto/)
-     * @see [Slowly fly to a location](https://www.mapabc.com/mapabc-gl-js/example/flyto-options/)
-     * @see [Fly to a location based on scroll position](https://www.mapabc.com/mapabc-gl-js/example/scroll-fly-to/)
+     * @see [Fly to a location](http://www.mapabc.com/mapabc-gl-js/example/flyto/)
+     * @see [Slowly fly to a location](http://www.mapabc.com/mapabc-gl-js/example/flyto-options/)
+     * @see [Fly to a location based on scroll position](http://www.mapabc.com/mapabc-gl-js/example/scroll-fly-to/)
      */
     flyTo(options: Object, eventData?: Object) {
         // This method implements an “optimal path” animation, as detailed in:
