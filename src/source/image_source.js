@@ -25,13 +25,13 @@ import type VertexBuffer from '../gl/vertex_buffer';
 
 /**
  * A data source containing an image.
- * (See the [Style Specification](https://www.mapabc.com/mapabc-gl-style-spec/#sources-image) for detailed documentation of options.)
+ * (See the [Style Specification](http://www.mapabc.com/mapabc-gl-style-spec/#sources-image) for detailed documentation of options.)
  *
  * @example
  * // add to map
  * map.addSource('some id', {
  *    type: 'image',
- *    url: 'https://www.mapabc.com/images/foo.png',
+ *    url: 'http://www.mapabc.com/images/foo.png',
  *    coordinates: [
  *        [-76.54, 39.18],
  *        [-76.52, 39.18],
@@ -50,7 +50,7 @@ import type VertexBuffer from '../gl/vertex_buffer';
  * ]);
  *
  * map.removeSource('some id');  // remove
- * @see [Add an image](https://www.mapabc.com/mapabc-gl-js/example/image-on-a-map/)
+ * @see [Add an image](http://www.mapabc.com/mapabc-gl-js/example/image-on-a-map/)
  */
 class ImageSource extends Evented implements Source {
     type: string;
