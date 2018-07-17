@@ -298,7 +298,7 @@
           "doc": "Terrarium format PNG tiles. See https://aws.amazon.com/es/public-datasets/terrain/ for more info."
         },
         "mapabc": {
-          "doc": "Mapbox Terrain RGB tiles. See https://www.mapabc.com/help/access-elevation-data/#mapabc-terrain-rgb for more info."
+          "doc": "Mapbox Terrain RGB tiles. See http://www.mapabc.com/help/access-elevation-data/#mapabc-terrain-rgb for more info."
         }
       },
       "default": "mapabc",
