@@ -26,8 +26,8 @@ const defaultOptions: Options = {
  * @example
  * var nav = new mapabcgl.NavigationControl();
  * map.addControl(nav, 'top-left');
- * @see [Display map navigation controls](https://www.mapabc.com/mapabc-gl-js/example/navigation/)
- * @see [Add a third party vector tile source](https://www.mapabc.com/mapabc-gl-js/example/third-party/)
+ * @see [Display map navigation controls](http://www.mapabc.com/mapabc-gl-js/example/navigation/)
+ * @see [Add a third party vector tile source](http://www.mapabc.com/mapabc-gl-js/example/third-party/)
  */
 class NavigationControl {
     _map: Map;
