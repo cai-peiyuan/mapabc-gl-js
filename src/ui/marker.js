@@ -18,7 +18,8 @@ type Options = {
     offset?: PointLike,
     anchor?: Anchor,
     color?: string,
-    draggable?: boolean
+    draggable?: boolean,
+	rotate?: number
 };
 
 /**
@@ -49,6 +50,7 @@ export default class Marker extends Evented {
     _draggable: boolean;
     _state: 'inactive' | 'pending' | 'active'; // used for handling drag events
     _positionDelta: ?number;
+	_rotate: ?number;
 
     constructor(options?: Options) {
         super();
@@ -69,6 +71,7 @@ export default class Marker extends Evented {
         this._anchor = options && options.anchor || 'center';
         this._color = options && options.color || '#3FB1CE';
         this._draggable = options && options.draggable || false;
+		this._rotate = options && options.rotate || 0;
         this._state = 'inactive';
 
         if (!options || !options.element) {
@@ -340,7 +343,7 @@ export default class Marker extends Evented {
             this._pos = this._pos.round();
         }
 
-        DOM.setTransform(this._element, `${anchorTranslate[this._anchor]} translate(${this._pos.x}px, ${this._pos.y}px)`);
+        DOM.setTransform(this._element, `${anchorTranslate[this._anchor]} translate(${this._pos.x}px, ${this._pos.y}px) rotate(${this._rotate}deg)`);
         applyAnchorClass(this._element, this._anchor, 'marker');
     }
 
@@ -363,6 +366,17 @@ export default class Marker extends Evented {
         return this;
     }
 
+	/**
+	*
+	*	添加marker旋转方法
+	*
+	*/
+	setRotate(rotate: number) {
+		this._rotate = rotate;
+		this._update();
+		return this;
+	}
+	
     _onMove(e: MapMouseEvent | MapTouchEvent) {
         this._pos = e.point.sub(this._positionDelta);
         this._lngLat = this._map.unproject(this._pos);
