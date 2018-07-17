@@ -2558,8 +2558,8 @@ var PageFooter = function (_Component) {
   return PageFooter;
 }(React.Component);
 
-var DEFAULT_SOCIAL_IMAGE_URL = 'https://www.mapabc.com/social-1200x630.png';
-var DEFAULT_SOCIAL_IMAGE_THUMBNAIL_URL = 'https://www.mapabc.com/social-120x120.png';
+var DEFAULT_SOCIAL_IMAGE_URL = 'http://www.mapabc.com/social-1200x630.png';
+var DEFAULT_SOCIAL_IMAGE_THUMBNAIL_URL = 'http://www.mapabc.com/social-120x120.png';
 
 var MetaTagger = function (_React$PureComponent) {
   inherits(MetaTagger, _React$PureComponent);
