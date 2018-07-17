@@ -7,8 +7,8 @@ import { bindAll } from '../../util/util';
 import type Map from '../map';
 
 /**
- * A `LogoControl` is a control that adds the MapAbc watermark
- * to the map as required by the [terms of service](https://www.mapabc.com/tos/) for MapAbc
+ * A `LogoControl` is a control that adds the Mapabc watermark
+ * to the map as required by the [terms of service](http://www.mapabc.com/tos/) for Mapabc
  * vector tiles and core styles.
  *
  * @implements {IControl}
