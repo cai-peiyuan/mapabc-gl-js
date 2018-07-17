@@ -4,7 +4,7 @@ import config from './config';
 
 import browser from './browser';
 
-const help = 'See https://www.mapabc.com/api-documentation/#access-tokens';
+const help = 'See http://www.mapabc.com/api-documentation/#access-tokens';
 
 type UrlObject = {|
     protocol: string,
