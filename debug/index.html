@@ -10,24 +10,51 @@
         html, body, #map { height: 100%; }
     </style>
 </head>
-
+<script>
+/**
+*   地图服务api地址
+*   字体下载域名列表，从多个域名下载字体
+*/
+var api_config=  {
+     url : "http://114.215.68.185:6060/mapserver",
+font_url : [
+    	'http://mapabc0.pinganzhongsheng.com:6060/mapserver'
+    ]
+}
+</script>
 <body>
 <div id='map'></div>
 
 <script src='/dist/mapabc-gl-dev.js'></script>
-<script src='/debug/mapabc_j12.js'></script>
+<script src='/debug/mapabc_styles.js'></script>
 <script src='/debug/access_token_generated.js'></script>
 <script>
 
 var map = window.map = new mapabcgl.Map({
     container: 'map',
-    zoom: 12.5,
+    zoom: 7,
     center: [116.403981, 39.915122],
     //style: 'mapabc://styles/mapabc_j12',
-    style:  mapabc_j12,
+    style:  mapabc_all,
     hash: true
 });
 
+     function getMarkerEl(){
+            var el = document.createElement('img')
+            el.src = 'http://114.215.68.185:5050/mapserver/mapdemo/apidemos/sourceLinks/img/marker-icon.png';
+            //宽度和高度要和图片宽高相同，否则点的位置会有偏差
+            el.style.width = '25px'; 
+            el.style.height = '41px'; 
+            return el
+        }
+var marker = null;		
+ map.on('load', function () {
+	marker = new mapabcgl.Marker(getMarkerEl(),{rotate:45})
+            .setLngLat([116.39, 39.91])
+            .addTo(map);
+			
+		//marker.setRotate(-90);
+ })
 </script>
 </body>
 </html>
