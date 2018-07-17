@@ -104,7 +104,7 @@ See [`bench/README.md`](https://github.com/mapabc/mapabc-gl-js/blob/master/bench
 
 ## Code Conventions
 
-* We use [`error` events](https://www.mapabc.com/mapabc-gl-js/api/#Map.event:error) to report user errors.
+* We use [`error` events](http://www.mapabc.com/mapabc-gl-js/api/#Map.event:error) to report user errors.
 * We use [`assert`](https://nodejs.org/api/assert.html) to check invariants that are not likely to be caused by user error. These `assert` statements are stripped out of production builds.
 * We use the following ES6 features:
   * `let`/`const`
@@ -166,7 +166,7 @@ We have divided our labels into categories to make them easier to use.
 
 ### Misc
 
-- [drawing antialiased lines](https://www.mapabc.com/blog/drawing-antialiased-lines/)
-- [drawing text with signed distance fields](https://www.mapabc.com/blog/text-signed-distance-fields/)
-- [label placement](https://www.mapabc.com/blog/placing-labels/)
+- [drawing antialiased lines](http://www.mapabc.com/blog/drawing-antialiased-lines/)
+- [drawing text with signed distance fields](http://www.mapabc.com/blog/text-signed-distance-fields/)
+- [label placement](http://www.mapabc.com/blog/placing-labels/)
 - [distance fields](http://bytewrangler.blogspot.com/2011/10/signed-distance-fields.html)

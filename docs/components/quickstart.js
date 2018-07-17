@@ -80,10 +80,10 @@ export default class extends React.Component {
                 </div>
                 <div className='prose space-bottom2'>
                     <p className='space-bottom2 pad1y'>Mapbox GL JS is a JavaScript library that uses WebGL to render interactive maps
-                        from <a href='https://www.mapabc.com/help/define-vector-tiles'>vector tiles</a> and <a
+                        from <a href='http://www.mapabc.com/help/define-vector-tiles'>vector tiles</a> and <a
                             href={prefixUrl('/style-spec')}>Mapbox styles</a>.
                         It is part of the Mapbox GL ecosystem, which includes <a
-                            href='https://www.mapabc.com/mobile/'>Mapbox Mobile</a>, a compatible renderer written in C++ with bindings
+                            href='http://www.mapabc.com/mobile/'>Mapbox Mobile</a>, a compatible renderer written in C++ with bindings
                         for desktop and mobile platforms. To see what new features our team is working on, take a look at our <a href={prefixUrl('/roadmap')}>roadmap</a>.</p>
 
                     <div className='col12 fill-light round pad2 clearfix space-top2'>
@@ -97,7 +97,7 @@ export default class extends React.Component {
                         <div className='space-bottom2 space-left1 contain'>
                             <div className='icon inline dark pad0 round fill-blue space-bottom1 document space-right1'/>
                             <div className='pin-left pad0x space-left4'>
-                                <a className='block line-height15' href='https://www.mapabc.com/help/mapabc-gl-js-fundamentals/'>GL JS
+                                <a className='block line-height15' href='http://www.mapabc.com/help/mapabc-gl-js-fundamentals/'>GL JS
                                     Fundamentals</a>
                                 <span className='quiet small'>Essential functions and common patterns</span>
                             </div>
@@ -105,7 +105,7 @@ export default class extends React.Component {
                         <div className='contain space-left1'>
                             <div className='icon inline dark pad0 round fill-red space-bottom1 globe space-right1'/>
                             <div className='pin-left pad0x space-left4'>
-                                <a className='block line-height15' href='https://www.mapabc.com/gallery/'>Gallery</a>
+                                <a className='block line-height15' href='http://www.mapabc.com/gallery/'>Gallery</a>
                                 <span className='quiet small'>Project showcase</span>
                             </div>
                         </div>
@@ -113,10 +113,10 @@ export default class extends React.Component {
 
                     <h2 className='strong'>Quickstart</h2>
                     <div className='space-bottom1'>To get started, you need to obtain an <a
-                        href='https://www.mapabc.com/help/create-api-access-token/'>access token</a> and a <a
-                        href='https://www.mapabc.com/help/define-style-url/'>style URL</a>. You can choose from one of our <a
-                        href='https://www.mapabc.com/api-documentation/#styles'>professionally designed styles</a> or create
-                        your own using <a href="https://www.mapabc.com/studio">Mapbox Studio</a>.
+                        href='http://www.mapabc.com/help/create-api-access-token/'>access token</a> and a <a
+                        href='http://www.mapabc.com/help/define-style-url/'>style URL</a>. You can choose from one of our <a
+                        href='http://www.mapabc.com/api-documentation/#styles'>professionally designed styles</a> or create
+                        your own using <a href="http://www.mapabc.com/studio">Mapbox Studio</a>.
                     </div>
 
                     <div className='rounded-toggle space-bottom2 inline'>

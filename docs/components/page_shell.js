@@ -7,8 +7,8 @@ class PageShell extends React.Component {
         return (
             <ReactPageShell darkHeaderText={true} includeFooter={false} {...this.props}>
                 <Helmet>
-                    <link href='https://www.mapabc.com/base/latest/base.css?v1.0' rel='stylesheet'/>
-                    <link href='https://www.mapabc.com/css/docs.css' rel='stylesheet'/>
+                    <link href='http://www.mapabc.com/base/latest/base.css?v1.0' rel='stylesheet'/>
+                    <link href='http://www.mapabc.com/css/docs.css' rel='stylesheet'/>
                 </Helmet>
                 <div className="shell-header-buffer" />
                 <div className='static-header-page'>
