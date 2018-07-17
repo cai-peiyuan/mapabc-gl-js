@@ -13,7 +13,7 @@ import type Map from '../map';
  * @implements {IControl}
  * @example
  * map.addControl(new mapabcgl.FullscreenControl());
- * @see [View a fullscreen map](https://www.mapabc.com/mapabc-gl-js/example/fullscreen/)
+ * @see [View a fullscreen map](http://www.mapabc.com/mapabc-gl-js/example/fullscreen/)
  */
 
 class FullscreenControl {
