@@ -16,7 +16,7 @@ export default function (fontstack: string,
                            callback: Callback<{[number]: StyleGlyph | null}>) {
     const begin = range * 256;
     const end = begin + 255;
-
+	
     const request = requestTransform(
         normalizeGlyphsURL(urlTemplate)
             .replace('{fontstack}', fontstack)
@@ -28,11 +28,11 @@ export default function (fontstack: string,
             callback(err);
         } else if (response) {
             const glyphs = {};
-
+			
             for (const glyph of parseGlyphPBF(response.data)) {
                 glyphs[glyph.id] = glyph;
             }
-
+			
             callback(null, glyphs);
         }
     });
