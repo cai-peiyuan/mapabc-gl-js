@@ -437,13 +437,13 @@ export default class extends React.Component {
                             <p>The intended audience of this specification includes:</p>
                             <ul>
                                 <li>Advanced designers and cartographers who want to write styles by hand rather
-                                    than use <a href='https://www.mapabc.com/studio'>Mapbox Studio</a></li>
+                                    than use <a href='http://www.mapabc.com/studio'>Mapbox Studio</a></li>
                                 <li>Developers using style-related features of <a
-                                    href='https://www.mapabc.com/mapabc-gl-js/'>Mapbox GL JS</a> or the <a
-                                    href='https://www.mapabc.com/android-sdk/'>Mapbox Maps SDK for Android</a></li>
+                                    href='http://www.mapabc.com/mapabc-gl-js/'>Mapbox GL JS</a> or the <a
+                                    href='http://www.mapabc.com/android-sdk/'>Mapbox Maps SDK for Android</a></li>
                                 <li>Authors of software that generates or processes Mapbox styles.</li>
                             </ul>
-                            <p>Developers using the <a href='https://www.mapabc.com/ios-sdk/'>Mapbox Maps SDK for iOS</a> or <a
+                            <p>Developers using the <a href='http://www.mapabc.com/ios-sdk/'>Mapbox Maps SDK for iOS</a> or <a
                                 href='https://github.com/mapabc/mapabc-gl-native/tree/master/platform/macos/'>
                                 Mapbox Maps SDK for macOS</a> should consult the iOS SDK API reference for platform-appropriate
                                 documentation of style-related features.</p>
@@ -554,7 +554,7 @@ export default class extends React.Component {
                                     <h3 className='space-bottom1'><a href='#sources-vector' title='link to vector'>vector</a></h3>
                                     <p>
                                         A vector tile source. Tiles must be in <a
-                                            href="https://www.mapabc.com/developers/vector-tiles/">Mapbox
+                                            href="http://www.mapabc.com/developers/vector-tiles/">Mapbox
                                         Vector Tile format</a>. All geometric coordinates in vector tiles must be
                                         between <code>-1 * extent</code> and <code>(extent * 2) - 1</code> inclusive.
                                         All layers that use a vector source must specify a <a href='#layer-source-layer'><code>"source-layer"</code></a>
@@ -745,8 +745,8 @@ export default class extends React.Component {
                                             "video": {
                                                 "type": "video",
                                                 "urls": [
-                                                    "https://www.mapabc.com/drone/video/drone.mp4",
-                                                    "https://www.mapabc.com/drone/video/drone.webm"
+                                                    "http://www.mapabc.com/drone/video/drone.mp4",
+                                                    "http://www.mapabc.com/drone/video/drone.webm"
                                                 ],
                                                 "coordinates": [
                                                     [-122.51596391201019, 37.56238816766053],

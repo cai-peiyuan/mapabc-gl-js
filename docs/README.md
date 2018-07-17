@@ -44,7 +44,7 @@ The command will print the URL you can use to view the documentation.
 
 ## Committing and Publishing Documentation
 
-The mapabc-gl-js repository has both `master` and `mb-pages` as active branches. The **`master` branch** is used for mainline code development: the next version of mapabc-gl-js will come from the code in this branch, and it may contain documentation and examples for APIs that are not yet part of a public release. The **`mb-pages` branch** is published to https://www.mapabc.com/mapabc-gl-js/ on any push to the branch. For the purposes of documentation changes, use these two branches as follows:
+The mapabc-gl-js repository has both `master` and `mb-pages` as active branches. The **`master` branch** is used for mainline code development: the next version of mapabc-gl-js will come from the code in this branch, and it may contain documentation and examples for APIs that are not yet part of a public release. The **`mb-pages` branch** is published to http://www.mapabc.com/mapabc-gl-js/ on any push to the branch. For the purposes of documentation changes, use these two branches as follows:
 
 * If your changes are relevant to the **currently released version**, make them on `mb-pages`. Examples: correcting the API documentation for a released API, adding a new example that depends only on current APIs.
 * If your changes depend on gl-js features **not in the currently released version**, make them on `master`. Examples: documenting or adding an example for a newly-added API.
