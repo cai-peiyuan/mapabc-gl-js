@@ -29,11 +29,10 @@ class LogoControl {
         this._container = DOM.create('div', 'mapabcgl-ctrl');
         const anchor = DOM.create('a', 'mapabcgl-ctrl-logo');
         anchor.target = "_blank";
-        anchor.href = "https://www.mapabc.com/";
+        anchor.href = "http://www.mapabc.com/";
         anchor.setAttribute("aria-label", "MapAbc logo");
         anchor.setAttribute("rel", "noopener");
         this._container.appendChild(anchor);
-        this._container.style.display = 'none';
 
         this._map.on('sourcedata', this._updateLogo);
         this._updateLogo();
