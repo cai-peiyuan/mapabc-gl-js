@@ -107,12 +107,12 @@ test('AttributionControl has the correct edit map link', (t) => {
     const attribution = new AttributionControl();
     map.addControl(attribution);
     map.on('load', () => {
-        map.addSource('1', {type: 'vector', attribution: '<a class="mapabc-improve-map" href="https://www.mapabc.com/feedback/" target="_blank">Improve this map</a>'});
+        map.addSource('1', {type: 'vector', attribution: '<a class="mapabc-improve-map" href="http://www.mapabc.com/feedback/" target="_blank">Improve this map</a>'});
         map.on('data', (e) => {
             if (e.dataType === 'source' && e.sourceDataType === 'metadata') {
-                t.equal(attribution._editLink.href, 'https://www.mapabc.com/feedback/?owner=mapabc&id=streets-v10&access_token=pk.123#/0/0/0', 'edit link contains map location data');
+                t.equal(attribution._editLink.href, 'http://www.mapabc.com/feedback/?owner=mapabc&id=streets-v10&access_token=pk.123#/0/0/0', 'edit link contains map location data');
                 map.setZoom(2);
-                t.equal(attribution._editLink.href, 'https://www.mapabc.com/feedback/?owner=mapabc&id=streets-v10&access_token=pk.123#/0/0/2', 'edit link updates on mapmove');
+                t.equal(attribution._editLink.href, 'http://www.mapabc.com/feedback/?owner=mapabc&id=streets-v10&access_token=pk.123#/0/0/2', 'edit link updates on mapmove');
                 t.end();
             }
         });
