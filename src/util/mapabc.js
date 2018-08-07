@@ -93,7 +93,7 @@ export const normalizeSpriteURL = function(url: string, format: string, extensio
         urlObject.path += `${format}${extension}`;
         return formatUrl(urlObject);
     }
-    urlObject.path = `/sprite/v1${urlObject.path}/sprite${format}${extension}`;
+    urlObject.path = `/sprite/v1${urlObject.path}${format}${extension}`;
     return makeAPIURL(urlObject, accessToken);
 };
 
