@@ -7,6 +7,7 @@ import browser from './util/browser';
 import { version } from '../package.json';
 import Map from './ui/map';
 import NavigationControl from './ui/control/navigation_control';
+import NavControl from './ui/control/nav_control';
 import GeolocateControl from './ui/control/geolocate_control';
 import AttributionControl from './ui/control/attribution_control';
 import ScaleControl from './ui/control/scale_control';
@@ -28,6 +29,7 @@ const exported = {
     setRTLTextPlugin: setRTLTextPlugin,
     Map,
     NavigationControl,
+    NavControl,
     GeolocateControl,
     AttributionControl,
     ScaleControl,
