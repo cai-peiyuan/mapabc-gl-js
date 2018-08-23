@@ -17,6 +17,9 @@ export default function (fontstack: string,
     const begin = range * 256;
     const end = begin + 255;
 	
+	//const begin = range * 128;
+   // const end = begin + 127;
+	
     const request = requestTransform(
         normalizeGlyphsURL(urlTemplate)
             .replace('{fontstack}', fontstack)

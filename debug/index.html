@@ -8,6 +8,40 @@
     <style>
         body { margin: 0; padding: 0; }
         html, body, #map { height: 100%; }
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		#map {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 200;
+			width: 100%;
+			height: 100%;
+		}
+
+		#info {
+			display: block;
+			position: relative;
+			margin: 0px auto;
+			width: 50%;
+			border: none;
+			border-radius: 3px;
+			font-size: 12px;
+			text-align: center;
+			color: #222;
+			background: #fff;
+		}
+		
+        #wrap{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background-color: white;
+        }
     </style>
 </head>
 <script>
@@ -16,14 +50,16 @@
 *   字体下载域名列表，从多个域名下载字体
 */
 var api_config=  {
-     url : "http://114.215.68.185:6060/mapserver",
+     url : "http://api.mapabc.com:6060/mapserver",
 font_url : [
-    	'http://mapabc0.pinganzhongsheng.com:6060/mapserver'
+    	'http://api.mapabc.com:6060/mapserver'
     ]
 }
 </script>
 <body>
 <div id='map'></div>
+<pre id="info"></pre>
+
 
 <script src='/dist/mapabc-gl-dev.js'></script>
 <script src='/debug/mapabc_styles.js'></script>
@@ -32,16 +68,21 @@ font_url : [
 
 var map = window.map = new mapabcgl.Map({
     container: 'map',
-    zoom: 7,
+    zoom: 5,
     center: [116.403981, 39.915122],
     //style: 'mapabc://styles/mapabc_j12',
-    style:  mapabc_all,
+    style:  mapabc_64,
     hash: true
 });
+//map.addControl(new mapabcgl.NavControl({showCompass:true,position:'top-right'}));
+map.addControl(new mapabcgl.NavControl({showCompass:true,position:'bottom-right'}));
 
+//map.addControl(new mapabcgl.FullscreenControl(),'top-left');
+
+//map.addControl(new mapabcgl.NavigationControl(),'top-left');
      function getMarkerEl(){
             var el = document.createElement('img')
-            el.src = 'http://114.215.68.185:5050/mapserver/mapdemo/apidemos/sourceLinks/img/marker-icon.png';
+            el.src = 'http://api.mapabc.com:6060/mapserver/mapdemo/apidemos/sourceLinks/img/marker-icon.png';
             //宽度和高度要和图片宽高相同，否则点的位置会有偏差
             el.style.width = '25px'; 
             el.style.height = '41px'; 
@@ -54,7 +95,20 @@ var marker = null;
             .addTo(map);
 			
 		//marker.setRotate(-90);
- })
+ });
+ //显示鼠标位置
+		map.on('mousemove', function(e) {
+			document.getElementById('info').innerHTML =
+			// e.point is the x, y coordinates of the mousemove event relative
+			// to the top-left corner of the map
+			JSON.stringify(e.point) + '<br />' +
+			// e.lngLat is the longitude, latitude geographical position of the event
+			JSON.stringify(e.lngLat);
+		});
+		
+		function rotateTo(){
+			
+		}
 </script>
 </body>
 </html>

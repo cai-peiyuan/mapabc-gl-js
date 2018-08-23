@@ -68,8 +68,8 @@ class GlyphManager {
                 return;
             }
 
-            const range = Math.floor(id / 256);
-            if (range * 256 > 65535) {
+            const range = Math.floor(id / (256 /1));
+            if (range * 256 / 1 > 65535) {
                 callback(new Error('glyphs > 65535 not supported'));
                 return;
             }
