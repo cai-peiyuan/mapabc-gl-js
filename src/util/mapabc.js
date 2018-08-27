@@ -30,7 +30,7 @@ function makeAPIURL(urlObject: UrlObject, accessToken: string | null | void): st
     if (accessToken[0] === 's')
         throw new Error(`Use a public access token (pk.*) with Mapbox GL, not a secret access token (sk.*). ${help}`);
 
-    urlObject.params.push(`access_token=${accessToken}`);
+    urlObject.params.push(`ak=${accessToken}`);
     return formatUrl(urlObject);
 }
 
@@ -53,7 +53,7 @@ function makeFontAPIURL(urlObject: UrlObject, accessToken: string | null | void)
     if (accessToken[0] === 's')
         throw new Error(`Use a public access token (pk.*) with Mapbox GL, not a secret access token (sk.*). ${help}`);
 
-    urlObject.params.push(`access_token=${accessToken}`);
+    urlObject.params.push(`ak=${accessToken}`);
     return formatUrl(urlObject);
 }
 
@@ -66,15 +66,42 @@ export { isMapboxURL };
 export const normalizeStyleURL = function(url: string, accessToken?: string): string {
     if (!isMapboxURL(url)) return url;
     const urlObject = parseUrl(url);
-    urlObject.path = `/styles/v1${urlObject.path}`;
+	
+	//orginal style url
+    //urlObject.path = `/styles/v1${urlObject.path}`;
+	
+	/**
+		modify download style json file url for msp
+		author : py.cai
+		date : 2018-08-27
+	*/
+	urlObject.path = urlObject.path.replace(/\//g,"");
+	urlObject.params.push(`n=${urlObject.path}`);
+	urlObject.path = `/webglapi/styles`;
+	
+	
     return makeAPIURL(urlObject, accessToken);
 };
 
 export const normalizeGlyphsURL = function(url: string, accessToken?: string): string {
     if (!isMapboxURL(url)) return url;
     const urlObject = parseUrl(url);
-    urlObject.path = `/fonts/v1${urlObject.path}`;
-    return makeFontAPIURL(urlObject, accessToken);
+	
+	//orginal font url
+    //urlObject.path = `/fonts/v1${urlObject.path}`;
+	
+	/** 
+		modify download font range file for msp 
+		author : py.cai
+		date : 2018-08-27
+	*/
+
+	urlObject.path = `/webglapi/fonts`;
+    urlObject.params.push('n={fontstack}');
+    urlObject.params.push('r={range}');
+
+	
+	return makeFontAPIURL(urlObject, accessToken);
 };
 
 export const normalizeSourceURL = function(url: string, accessToken?: string): string {
@@ -93,7 +120,20 @@ export const normalizeSpriteURL = function(url: string, format: string, extensio
         urlObject.path += `${format}${extension}`;
         return formatUrl(urlObject);
     }
-    urlObject.path = `/sprite/v1${urlObject.path}${format}${extension}`;
+	// orginal sprite download url
+    //urlObject.path = `/sprite/v1${urlObject.path}${format}${extension}`;
+	
+	/**
+	modify sprite file url for msp
+	**/
+	urlObject.path = urlObject.path.replace(/\//g,"");
+	extension = extension.replace(/\./g,"");
+	
+	
+	urlObject.params.push(`n=${urlObject.path}${format}`);
+    urlObject.params.push(`e=${extension}`);
+	urlObject.path = `/webglapi/sprite`;
+	
     return makeAPIURL(urlObject, accessToken);
 };
 
