@@ -250,6 +250,7 @@ class Map extends Camera {
     _crossFadingFactor: number;
     _collectResourceTiming: boolean;
     _renderTaskQueue: TaskQueue;
+	_intervalFunc: null;
 
     /**
      * The map's {@link ScrollZoomHandler}, which implements zooming in and out with a scroll wheel or trackpad.
@@ -1224,6 +1225,103 @@ class Map extends Camera {
         return this;
     }
 
+	trafficLayer(options: Object){
+		
+		const _this = this;
+		
+		options = extend({
+			show: true,
+            minzoom: 1,
+            maxzoom: 24,
+            type: 'vector',
+            refresh: 20,
+			before: 'LRoadcross',
+			sourceid: 'traffic-amap'
+        }, options);
+		console.dir(options);
+		
+		if(options.show){
+			if(!this.getSource(options.sourceid) && !this.getLayer(options.sourceid)){
+				this.addLayer({
+				  "id": options.sourceid,
+				  "type": "line",
+				  "source": {  
+						"type": "vector",  
+						"tiles": ["http://115.28.212.232:8080/gat/{z}-{x}-{y}"]  
+					},
+				  "source-layer": "TFRoad",
+				  "minzoom": 1,
+				  "maxzoom": 24,
+				  "layout": {
+					"line-cap": "round",
+					"line-join": "round",
+					"visibility": "visible"
+				  },
+				  "paint": {
+					"line-color": {
+					  "property": "s",
+					  "type": "categorical",
+					  "stops": [
+						[
+						  {
+							"zoom": 5,
+							"value": 1
+						  },
+						  "rgba(255, 204, 0, 1)"
+						],
+						[
+						  {
+							"zoom": 5,
+							"value": 2
+						  },
+						  "rgba(51, 177, 0, 1)"
+						],
+						[
+						  {
+							"zoom": 5,
+							"value": 3
+						  },
+						  "rgba(140, 14, 14, 1)"
+						],
+						[
+						  {
+							"zoom": 5,
+							"value": 4
+						  },
+						  "rgba(106, 143, 198, 1)"
+						]
+					  ],
+					  "default": "rgba(222, 0, 0, 1)"
+					},
+					"line-width": [
+					  "get",
+					  "w"
+					]
+				  }
+				},options.before);
+				
+				this._intervalFunc = setInterval(function(){
+					_this.getSource(options.sourceid).load();
+					console.dir("reload data");
+				},10000);
+			}
+		}else{
+			if(this._intervalFunc){
+				clearInterval(this._intervalFunc);
+			}
+			if(this.getLayer(options.sourceid)){
+				this.removeLayer(options.sourceid);
+			}
+			if(this.getSource(options.sourceid)){
+				this.removeSource(options.sourceid);
+			}
+			
+		};
+		
+		
+		
+		return this;
+	}
     /**
      * Moves a layer to a different z-position.
      *
