@@ -50,9 +50,9 @@
 *   字体下载域名列表，从多个域名下载字体
 */
 var api_config=  {
-     url : "http://api.mapabc.com:6060/mapserver",
-font_url : [
-    	'http://api.mapabc.com:6060/mapserver'
+    url : "http://127.0.0.1:6060/mapserver",
+	font_url : [
+    	'http://127.0.0.1:6060/mapserver'
     ]
 }
 </script>
@@ -70,8 +70,8 @@ var map = window.map = new mapabcgl.Map({
     container: 'map',
     zoom: 5,
     center: [116.403981, 39.915122],
-    //style: 'mapabc://styles/mapabc_j12',
-    style:  mapabc_64,
+    style: 'mapabc://styles/mapabc_64W',
+    //style:  developStyle,
     hash: true
 });
 //map.addControl(new mapabcgl.NavControl({showCompass:true,position:'top-right'}));
