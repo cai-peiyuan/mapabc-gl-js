@@ -53,7 +53,18 @@ var api_config=  {
     url : "http://127.0.0.1:6060/mapserver",
 	font_url : [
     	'http://127.0.0.1:6060/mapserver'
-    ]
+    ],
+	traffic_source:{
+		vector:{  
+			"type": "vector",  
+			"tiles": ["http://115.28.212.232:8080/gat/{z}-{x}-{y}"]  
+		},
+		raster:{
+			"type": "raster",
+			"tiles":["http://115.28.212.232:8083/img/?db=31000001&t=t-{z}-{x}-{y}"],
+			"tileSize":256
+		}
+	}
 }
 </script>
 <body>

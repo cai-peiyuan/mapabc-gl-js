@@ -251,6 +251,7 @@ class Map extends Camera {
     _collectResourceTiming: boolean;
     _renderTaskQueue: TaskQueue;
 	_intervalFunc: null;
+	_trafficLayerId: String;
 
     /**
      * The map's {@link ScrollZoomHandler}, which implements zooming in and out with a scroll wheel or trackpad.
@@ -1225,101 +1226,129 @@ class Map extends Camera {
         return this;
     }
 
-	trafficLayer(options: Object){
+	removeLayerAndSource(layerid: String){
+		
+		if(this.getLayer(layerid)){
+			this.removeLayer(layerid);
+		}
+		if(this.getSource(layerid)){
+			this.removeSource(layerid);
+		}
+	}
+	
+	trafficLayer(show: boolean, options: Object){
 		
 		const _this = this;
 		
-		options = extend({
-			show: true,
-            minzoom: 1,
-            maxzoom: 24,
-            type: 'vector',
-            refresh: 20,
-			before: 'LRoadcross',
-			sourceid: 'traffic-amap'
-        }, options);
-		console.dir(options);
 		
-		if(options.show){
-			if(!this.getSource(options.sourceid) && !this.getLayer(options.sourceid)){
-				this.addLayer({
-				  "id": options.sourceid,
-				  "type": "line",
-				  "source": {  
-						"type": "vector",  
-						"tiles": ["http://115.28.212.232:8080/gat/{z}-{x}-{y}"]  
-					},
-				  "source-layer": "TFRoad",
-				  "minzoom": 1,
-				  "maxzoom": 24,
-				  "layout": {
-					"line-cap": "round",
-					"line-join": "round",
-					"visibility": "visible"
-				  },
-				  "paint": {
-					"line-color": {
-					  "property": "s",
-					  "type": "categorical",
-					  "stops": [
-						[
-						  {
-							"zoom": 5,
-							"value": 1
-						  },
-						  "rgba(255, 204, 0, 1)"
-						],
-						[
-						  {
-							"zoom": 5,
-							"value": 2
-						  },
-						  "rgba(51, 177, 0, 1)"
-						],
-						[
-						  {
-							"zoom": 5,
-							"value": 3
-						  },
-						  "rgba(140, 14, 14, 1)"
-						],
-						[
-						  {
-							"zoom": 5,
-							"value": 4
-						  },
-						  "rgba(106, 143, 198, 1)"
-						]
-					  ],
-					  "default": "rgba(222, 0, 0, 1)"
-					},
-					"line-width": [
-					  "get",
-					  "w"
-					]
-				  }
-				},options.before);
-				
-				this._intervalFunc = setInterval(function(){
-					_this.getSource(options.sourceid).load();
-					console.dir("reload data");
-				},10000);
-			}
-		}else{
-			if(this._intervalFunc){
-				clearInterval(this._intervalFunc);
-			}
-			if(this.getLayer(options.sourceid)){
+		options = extend({
+				minzoom: 1,	//最小级别
+				maxzoom: 24,  //最大级别
+				type: 'vector',  //路况图层类型 默认矢量
+				refresh: 120*1000, // 刷新时间,默认2分钟
+				before: 'LRoadcross',   //所在**图层之前
+				layerid: 'layer-traffic-amap'
+			}, options);
+		
+		if(!show){
+			/*if(this.getLayer(options.sourceid)){
 				this.removeLayer(options.sourceid);
 			}
 			if(this.getSource(options.sourceid)){
 				this.removeSource(options.sourceid);
+			}*/
+			if(this._intervalFunc){
+				clearInterval(this._intervalFunc);
 			}
+			this.removeLayerAndSource(this._trafficLayerId);
 			
-		};
-		
-		
-		
+		}else{
+			
+			this._trafficLayerId = options.layerid;
+			
+			if(this.getSource(this._trafficLayerId) || this.getLayer(this._trafficLayerId)){
+				if(this._intervalFunc){
+					clearInterval(this._intervalFunc);
+				}
+				this.removeLayerAndSource(this._trafficLayerId);
+			}
+			if(!this.getSource(this._trafficLayerId) && !this.getLayer(this._trafficLayerId)){
+				if(options.type == 'vector'){
+					const trafficLayerStyle = {
+					  "id": this._trafficLayerId,
+					  "type": "line",
+					  "source": api_config.traffic_source.vector,
+					  "source-layer": "TFRoad",
+					  "minzoom": 1,
+					  "maxzoom": 24,
+					  "layout": {
+						"line-cap": "round",
+						"line-join": "round",
+						"visibility": "visible"
+					  },
+					  "paint": {
+						"line-color": {
+						  "property": "s",
+						  "type": "categorical",
+						  "stops": [
+							[
+							  {
+								"zoom": 5,
+								"value": 1
+							  },
+							  "rgba(255, 204, 0, 1)"
+							],
+							[
+							  {
+								"zoom": 5,
+								"value": 2
+							  },
+							  "rgba(51, 177, 0, 1)"
+							],
+							[
+							  {
+								"zoom": 5,
+								"value": 3
+							  },
+							  "rgba(140, 14, 14, 1)"
+							],
+							[
+							  {
+								"zoom": 5,
+								"value": 4
+							  },
+							  "rgba(106, 143, 198, 1)"
+							]
+						  ],
+						  "default": "rgba(222, 0, 0, 1)"
+						},
+						"line-width": [
+						  "get",
+						  "w"
+						]
+					  }
+					};
+					this.addLayer(trafficLayerStyle , options.before);
+					this._intervalFunc = setInterval(function(){
+						_this.removeLayerAndSource(_this._trafficLayerId);
+						_this.addLayer(trafficLayerStyle , options.before);
+					},options.refresh);
+				}
+				
+				if(options.type == 'raster'){
+					const trafficLayerStyle = {
+						"id": this._trafficLayerId,
+						"type": "raster",
+						"source": api_config.traffic_source.raster
+					}
+					this.addLayer(trafficLayerStyle , options.before);
+					this._intervalFunc = setInterval(function(){
+						_this.removeLayerAndSource(_this._trafficLayerId);
+						_this.addLayer(trafficLayerStyle , options.before);
+					},options.refresh);
+				}
+			}
+		}
 		return this;
 	}
     /**
