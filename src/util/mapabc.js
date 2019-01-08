@@ -35,8 +35,9 @@ function makeAPIURL(urlObject: UrlObject, accessToken: string | null | void): st
 }
 
 function makeFontAPIURL(urlObject: UrlObject, accessToken: string | null | void): string {
-    var index = Math.floor((Math.random()*config.FONT_URL.length)); 
-    var url = config.FONT_URL[index];
+    //var index = Math.floor((Math.random()*config.FONT_URL.length)); 
+    //var url = config.FONT_URL[index];
+    const url = config.API_URL;
     const apiUrlObject = parseUrl(url);
     urlObject.protocol = apiUrlObject.protocol;
     urlObject.authority = apiUrlObject.authority;

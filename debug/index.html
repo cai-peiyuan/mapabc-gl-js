@@ -50,10 +50,7 @@
 *   字体下载域名列表，从多个域名下载字体
 */
 var api_config=  {
-    url : "http://api.mapabc.com:6060/mapserver",
-	font_url : [
-    	'http://api.mapabc.com:6060/mapserver'
-    ],
+    url : "http://127.0.0.1:35001",
 	traffic_source:{
 		vector:{  
 			"type": "vector",  
@@ -87,6 +84,7 @@ var map = window.map = new mapabcgl.Map({
     style: 'mapabc://styles/mapabc79w',
     //style:  developStyle,
     hash: true
+	//,localIdeographFontFamily: "PingFang SC,Microsoft YaHei,微软雅黑,Arial,sans-serif,黑体"
 });
 //map.addControl(new mapabcgl.NavControl({showCompass:true,position:'top-right'}));
 map.addControl(new mapabcgl.NavControl({showCompass:true,position:'bottom-right'}));

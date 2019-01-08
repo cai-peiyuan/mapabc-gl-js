@@ -251,6 +251,7 @@ class Map extends Camera {
     _collectResourceTiming: boolean;
     _renderTaskQueue: TaskQueue;
 	_intervalFunc: null;
+	_intervalFunc_traffic: null;
 	_trafficLayerId: String;
 
     /**
@@ -1239,48 +1240,59 @@ class Map extends Camera {
 	trafficLayer(show: boolean, options: Object){
 		
 		const _this = this;
-		
-		
-		options = extend({
+		//生成默认配置
+		options = extend({},{
 				minzoom: 1,	//最小级别
 				maxzoom: 24,  //最大级别
 				type: 'vector',  //路况图层类型 默认矢量
 				refresh: 120*1000, // 刷新时间,默认2分钟
 				before: 'LRoadcross',   //所在**图层之前
-				layerid: 'layer-traffic-amap'
+				layerid: 'layer-traffic-amap',
+				animation: false
 			}, options);
+		this._trafficLayerId = options.layerid;//设置全局layerid
 		
-		if(!show){
+		if(!show){ //是否显示路况  隐藏
 			/*if(this.getLayer(options.sourceid)){
 				this.removeLayer(options.sourceid);
 			}
 			if(this.getSource(options.sourceid)){
 				this.removeSource(options.sourceid);
 			}*/
-			if(this._intervalFunc){
+			if(this._intervalFunc){ //清除路况刷新定时器
 				clearInterval(this._intervalFunc);
 			}
+			if(this._intervalFunc_traffic){
+				clearInterval(this._intervalFunc_traffic);
+			}
+			//删除原有路况
 			this.removeLayerAndSource(this._trafficLayerId);
 			
 		}else{
 			
-			this._trafficLayerId = options.layerid;
+			//this._trafficLayerId = options.layerid;
 			
-			if(this.getSource(this._trafficLayerId) || this.getLayer(this._trafficLayerId)){
+			if(this.getSource(this._trafficLayerId) || this.getLayer(this._trafficLayerId)){ //重复调用显示路况方法，清除原有叠加路况
 				if(this._intervalFunc){
 					clearInterval(this._intervalFunc);
 				}
+				if(this._intervalFunc_traffic){
+					clearInterval(this._intervalFunc_traffic);
+				}
 				this.removeLayerAndSource(this._trafficLayerId);
 			}
+			
 			if(!this.getSource(this._trafficLayerId) && !this.getLayer(this._trafficLayerId)){
+				
 				if(options.type == 'vector'){
+					//定义路况图层属性
 					const trafficLayerStyle = {
 					  "id": this._trafficLayerId,
 					  "type": "line",
-					  "source": api_config.traffic_source.vector,
+					  "source": typeof options.source !== 'undefined'?options.source:api_config.traffic_source.vector,
 					  "source-layer": "TFRoad",
-					  "minzoom": 1,
-					  "maxzoom": 24,
+					  "minzoom": options.minzoom,
+					  "maxzoom": options.maxzoom,
 					  "layout": {
 						"line-cap": "round",
 						"line-join": "round",
@@ -1328,18 +1340,53 @@ class Map extends Camera {
 						]
 					  }
 					};
+					//添加路况图层
 					this.addLayer(trafficLayerStyle , options.before);
 					this._intervalFunc = setInterval(function(){
 						_this.removeLayerAndSource(_this._trafficLayerId);
 						_this.addLayer(trafficLayerStyle , options.before);
 					},options.refresh);
+					
+					//矢量路况设置流动效果
+					if(options.animation){
+					
+						var dashLength = 0.01;
+						var gapLength = 4;
+						var valueOne, valueTwo, valueThree, valueFour, ValueFive;
+						var totalNumberOfSteps = 20;
+						var dashSteps = totalNumberOfSteps * dashLength / (gapLength + dashLength); //4
+						var gapSteps = totalNumberOfSteps - dashSteps; //16
+						var currentStep = 20;
+						this._intervalFunc_traffic = setInterval(function() {
+							currentStep = currentStep - 1;
+							if (currentStep <= 0) {
+								currentStep = 20;
+							}
+							if (currentStep < dashSteps) {
+								valueOne = currentStep / dashSteps;
+								valueTwo = (1 - valueOne) * dashLength; //3 2 1
+								valueThree = gapLength;//16 16 16
+								valueFour = valueOne * dashLength; //1 2 3
+								ValueFive = 0;
+							} else {
+								valueOne = (currentStep - dashSteps) / (gapSteps);//0
+								valueTwo = 0; ///0
+								valueThree = (1 - valueOne) * gapLength;
+								valueFour = dashLength;
+								ValueFive = valueOne * gapLength;
+							}
+							var arr = [];
+							arr.push(valueTwo, valueThree, valueFour, ValueFive)
+							_this.setPaintProperty("layer-traffic-amap", "line-dasharray", arr);
+						}, 60);
+					}				
 				}
 				
 				if(options.type == 'raster'){
 					const trafficLayerStyle = {
 						"id": this._trafficLayerId,
 						"type": "raster",
-						"source": api_config.traffic_source.raster
+						"source": typeof options.source !== 'undefined'?options.source:api_config.traffic_source.raster
 					}
 					this.addLayer(trafficLayerStyle , options.before);
 					this._intervalFunc = setInterval(function(){

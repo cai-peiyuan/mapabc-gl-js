@@ -30,7 +30,7 @@ class GlyphManager {
 
     constructor(requestTransform: RequestTransformFunction, localIdeographFontFamily: ?string) {
         this.requestTransform = requestTransform;
-        this.localIdeographFontFamily = localIdeographFontFamily;
+        this.localIdeographFontFamily = localIdeographFontFamily || 'PingFang SC,Microsoft YaHei,微软雅黑,Arial,sans-serif,黑体';
         this.entries = {};
     }
 
